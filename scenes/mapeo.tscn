@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://csdbmk2b2thuk"]
+
+[ext_resource type="PackedScene" uid="uid://df7qdi1dwejlu" path="res://scenes/input_button.tscn" id="1_805lp"]
+[ext_resource type="Script" path="res://scripts/control_mapping_menu.gd" id="1_plxti"]
+
+[node name="Mapeo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plxti")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -495.0
+offset_top = -266.0
+offset_right = 495.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Agarrar Izquierda" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+text = " "
+
+[node name="Mano Izquierda Left" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Izquierda Right" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Izquierda Up" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Izquierda Down" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Agarrar Derecha" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Derecha Left" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Derecha Right" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Derecha Up" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2
+
+[node name="Mano Derecha Down" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_805lp")]
+layout_mode = 2

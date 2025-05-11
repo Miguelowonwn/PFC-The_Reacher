@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=3 uid="uid://1khlwc6xsmeo"]
+
+[ext_resource type="Texture2D" uid="uid://cgjy782n3fokv" path="res://sprites/statue_eye/sprite_0.png" id="1_2mcrc"]
+[ext_resource type="Script" path="res://scripts/eye.gd" id="1_nko8d"]
+[ext_resource type="Texture2D" uid="uid://cpdm8qikfow3h" path="res://sprites/statue_eye/sprite_1.png" id="2_b8anj"]
+[ext_resource type="Texture2D" uid="uid://cmno8oubyf8q2" path="res://sprites/statue_eye/sprite_2.png" id="3_ydp7d"]
+[ext_resource type="Texture2D" uid="uid://bb1qpo3326ay0" path="res://sprites/statue_eye/sprite_3.png" id="4_5dnfi"]
+[ext_resource type="Texture2D" uid="uid://88pear3ixeou" path="res://sprites/statue_eye/sprite_4.png" id="5_2pqtq"]
+
+[sub_resource type="GDScript" id="GDScript_ccuxf"]
+script/source = "extends CharacterBody2D
+  
+const SPEED = 300.0
+
+@onready var left_hand: CharacterBody2D = $\".\"
+@onready var area_2d: Area2D = $Area2D
+@onready var sprite_2d: Sprite2D = $Sprite2D    
+
+func _physics_process(delta: float) -> void:   
+	# Obtiene la dirección horizontal y vertical basándose en las entradas de usuario  
+	var direction_x_left := Input.get_axis(\"left_hand_left\", \"left_hand_right\")
+	var direction_y_left := Input.get_axis(\"left_hand_up\", \"left_hand_down\")
+	  
+	# Agarrar 
+	if Input.is_action_just_pressed(\"grab_left\"):
+		sprite_2d.texture = preload(\"res://sprites/glove_grab.png\") 
+		if area_2d.area_entered:
+			pass
+	 
+	
+	if Input.is_action_just_released(\"grab_left\"):
+		sprite_2d.texture = preload(\"res://sprites/glove_no_grab.png\")
+		
+	# Movimiento horizontal mano izquierda
+	if direction_x_left:
+		velocity.x = direction_x_left * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Movimiento vertical mano izquierda
+	if direction_y_left:
+		velocity.y = direction_y_left * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		 
+	# Mueve el personaje utilizando la velocidad calculada
+	move_and_slide()
+ 
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_shrxo"]
+load_path = "res://.godot/imported/glove_no_grab.png-e6eddf30985972df9faf59fdb098c3c5.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bp7h"]
+radius = 12.0
+
+[sub_resource type="GDScript" id="GDScript_4oj1a"]
+script/source = "extends CharacterBody2D
+ 
+const SPEED = 300.0
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+func _physics_process(delta: float) -> void:   
+	# Obtiene la dirección horizontal y vertical basándose en las entradas de usuario
+	var direction_x_right := Input.get_axis(\"right_hand_left\", \"right_hand_right\")
+	var direction_y_right := Input.get_axis(\"right_hand_up\", \"right_hand_down\") 
+	
+	# Agarrar 
+	if Input.is_action_just_pressed(\"grab_right\"):
+		sprite_2d.texture = preload(\"res://sprites/glove_grab.png\")
+	
+	if Input.is_action_just_released(\"grab_right\"):
+		sprite_2d.texture = preload(\"res://sprites/glove_no_grab.png\")
+	
+	# Movimiento horizontal mano derecha
+	if direction_x_right:
+		velocity.x = direction_x_right * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Movimiento vertical mano derecha
+	if direction_y_right:
+		velocity.y = direction_y_right * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		  
+	# Mueve el personaje utilizando la velocidad calculada
+	move_and_slide() 
+	
+ 
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3p1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2mcrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b8anj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ydp7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5dnfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2pqtq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hfii"]
+
+[node name="Reacher" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-114.0]
+
+[node name="Left_hand" type="CharacterBody2D" parent="."]
+z_index = 1
+scale = Vector2(5, 5)
+motion_mode = 1
+script = SubResource("GDScript_ccuxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left_hand"]
+position = Vector2(-40.8, -43.8)
+texture = SubResource("CompressedTexture2D_shrxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_hand"]
+position = Vector2(-42.8, -45.8)
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Right_hand" type="CharacterBody2D" parent="."]
+z_index = 1
+scale = Vector2(5, 5)
+script = SubResource("GDScript_4oj1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Right_hand"]
+position = Vector2(42.2, -43.8)
+texture = SubResource("CompressedTexture2D_shrxo")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_hand"]
+position = Vector2(44.2, -45.8)
+rotation = -0.0340298
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Eye" type="RigidBody2D" parent="."]
+center_of_mass_mode = 1
+script = ExtResource("1_nko8d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Eye"]
+position = Vector2(1, 11)
+scale = Vector2(4.31316, 4.31316)
+sprite_frames = SubResource("SpriteFrames_a3p1o")
+autoplay = "default"
+frame_progress = 0.0034671
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eye"]
+position = Vector2(1, 13)
+rotation = 1.57079
+scale = Vector2(3.13134, 4.04371)
+shape = SubResource("CapsuleShape2D_8hfii")
+
+[node name="Camera2D" type="Camera2D" parent="Eye"]
+
+[node name="LefthandJoint" type="DampedSpringJoint2D" parent="."]
+node_a = NodePath("../Left_hand")
+node_b = NodePath("../Eye")
+disable_collision = false
+damping = 0.01
+
+[node name="RighthandJoint" type="DampedSpringJoint2D" parent="."]
+node_a = NodePath("../Eye")
+node_b = NodePath("../Right_hand")
+disable_collision = false
+damping = 0.01

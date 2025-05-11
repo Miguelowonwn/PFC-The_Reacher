@@ -1,9 +1,68 @@
-[gd_scene load_steps=2 format=3 uid="uid://bibr7xa2jr5ds"]
+[gd_scene load_steps=9 format=3 uid="uid://bibr7xa2jr5ds"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_5bf2x"]
 [ext_resource type="PackedScene" uid="uid://1khlwc6xsmeo" path="res://scenes/reacher.tscn" id="1_dnm07"]
+[ext_resource type="Texture2D" uid="uid://i2bl7bpp5xqr" path="res://sprites/background/Cartoon_Forest_BG_01.png" id="2_1je6g"]
+[ext_resource type="Texture2D" uid="uid://bq11dpwgfnkxs" path="res://sprites/background/pixil-frame-0.png" id="4_xpud2"]
+[ext_resource type="PackedScene" uid="uid://csdbmk2b2thuk" path="res://scenes/mapeo.tscn" id="5_j45sb"]
+[ext_resource type="AudioStream" uid="uid://clsjypybvlwpn" path="res://resources/1-01 - Happy Adventure, Delightful Adventure.mp3" id="6_tdmrr"]
+[ext_resource type="PackedScene" uid="uid://ldit7w1t2rue" path="res://scenes/menu_escape.tscn" id="7_hik6f"]
+[ext_resource type="Script" path="res://scripts/pause_node.gd" id="8_7iofb"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_5bf2x")
 
 [node name="Reacher" parent="." instance=ExtResource("1_dnm07")]
+z_index = 1
+position = Vector2(-8, 549)
+scale = Vector2(0.439999, 0.439999)
 
-[node name="Camera2D" type="Camera2D" parent="Reacher"]
+[node name="Background" type="Node2D" parent="."]
+scale = Vector2(1.39252, 1.39252)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(0, 40.2148)
+texture = ExtResource("2_1je6g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-8, 6)
+scale = Vector2(47.4282, 42.2268)
+polygon = PackedVector2Array(-7.50608, -8.85693, 7.67475, -8.78589, 7.54825, -0.28418, 6.85246, 4.21533, 7.84343, 8.50171, -7.78018, 8.43066, -6.76812, 4.3811, -7.48499, -0.28418)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(7.57051, 7.57051)
+texture = ExtResource("4_xpud2")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Mapeo" parent="GUI" instance=ExtResource("5_j45sb")]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(0.59758, 0.59758)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tdmrr")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasMenuEscape" type="CanvasLayer" parent="."]
+
+[node name="MenuEscape" parent="CanvasMenuEscape" instance=ExtResource("7_hik6f")]
+process_mode = 3
+visible = false
+
+[node name="PauseNode" type="Node" parent="."]
+process_mode = 2
+script = ExtResource("8_7iofb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="Reacher"]

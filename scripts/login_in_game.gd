@@ -35,9 +35,9 @@ func _ready() -> void:
 			push_error("Error copiando BD: ", error_string(err))
 			return
 	  
-	database = SQLite.new() 
+	database = SQLite.new()  
 	database.path="user://data.db"
-	print(database.path) 
+	database.open_db() 
 	line_edit_name.grab_focus() 
 	_draw_progress_chart()
 	line_edit_pass.secret = true 
@@ -102,11 +102,9 @@ func _on_no_crear_usuario_pressed() -> void:
 	ok_button.visible = true
 	si_crear_usuario.visible = false
 	no_crear_usuario.visible = false
-
-
+ 
 func _on_ok_button_crear_pass_pressed() -> void:   
-	var pass_valida = _check_password(line_edit_pass.text)
-	pass_valida = line_edit_pass.text.sha256_text()
+	var pass_valida = _check_password(line_edit_pass.text) 
 	line_edit_pass.text = ""
 	var usuario_registrado = false
 	if usuario_registrado: 
@@ -115,6 +113,7 @@ func _on_ok_button_crear_pass_pressed() -> void:
 		line_edit_pass.visible = false
 		pass
 	elif pass_valida:
+		pass_valida = line_edit_pass.text.sha256_text()
 		var datos_usuario_nuevo = {
 			"nombre": line_edit_name.text,
 			"password": pass_valida

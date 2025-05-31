@@ -1,0 +1,622 @@
+[gd_scene load_steps=16 format=3 uid="uid://dxp5ylkvydj17"]
+
+[ext_resource type="Texture2D" uid="uid://i2bl7bpp5xqr" path="res://sprites/background/Cartoon_Forest_BG_01.png" id="1_1apih"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vp5u2"]
+[ext_resource type="FontFile" uid="uid://msbi0lieg2it" path="res://resources/alagard.ttf" id="2_mqq26"]
+[ext_resource type="Texture2D" uid="uid://dikjuw2e1u21x" path="res://sprites/glove_no_grab.png" id="4_i6t4k"]
+[ext_resource type="Texture2D" uid="uid://cgjy782n3fokv" path="res://sprites/statue_eye/sprite_0.png" id="5_uiyb8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apjcn"]
+texture = ExtResource("1_1apih")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq41h"]
+bg_color = Color(0.797111, 0.70421, 0.378557, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjcvu"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieyf5"]
+bg_color = Color(0.784248, 0.691647, 0.366515, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="Animation" id="Animation_dn8im"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container_Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(394, 332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Titulo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(205, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(902, 566)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container Skins Mano:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1213, 371)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container Skins Ojo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1750, 371)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Elige tu skin!:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1594, 278)]
+}
+
+[sub_resource type="Animation" id="Animation_miqmw"]
+resource_name = "fade_escalar"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container_Menu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333, 1.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(394, 332), Vector2(-659, 332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Titulo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333301, 1.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(205, 123), Vector2(-848, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(902, 566), Vector2(-151, 566)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container Skins Mano:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.333333, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1213, 371), Vector2(73, 371)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container Skins Ojo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.433333, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1750, 371), Vector2(610, 371)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Elige tu skin!:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.366667, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1594, 278), Vector2(454, 278)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awl7p"]
+_data = {
+"RESET": SubResource("Animation_dn8im"),
+"fade_escalar": SubResource("Animation_miqmw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1a30"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mp27"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndvgp"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+border_color = Color(3.17663e-06, 0.944339, 0.633051, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vp5u2")
+metadata/_edit_vertical_guides_ = [1152.0, 576.0]
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_apjcn")
+
+[node name="Container_Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = 8.0
+offset_right = 171.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.70007, 1.70007)
+pivot_offset = Vector2(180.827, 77.2652)
+theme_override_constants/separation = 15
+
+[node name="Escalar" type="Button" parent="Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Ajustes")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Scores")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Escalar
+"
+
+[node name="Scores" type="Button" parent="Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Escalar")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Ajustes")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Scores"
+
+[node name="Ajustes" type="Button" parent="Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Scores")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Escalar")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Ajustes"
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -201.0
+offset_right = 373.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.625575, 1.43189e-06, 5.77569e-07, 1)
+theme_override_colors/font_shadow_color = Color(0.98275, 4.74088e-06, 5.77569e-07, 1)
+theme_override_constants/shadow_offset_x = -6
+theme_override_constants/shadow_offset_y = -3
+theme_override_fonts/font = ExtResource("2_mqq26")
+theme_override_font_sizes/font_size = 128
+text = "The Reacher"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 326.0
+offset_top = 242.0
+offset_right = 410.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_ieyf5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Salir"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_awl7p")
+}
+
+[node name="Container Skins Mano" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.573
+anchor_right = 1.0
+anchor_bottom = 0.573
+offset_left = 61.0
+offset_top = -0.304016
+offset_right = 277.0
+offset_bottom = 83.696
+grow_vertical = 0
+scale = Vector2(2.16637, 2.16637)
+tooltip_text = "prueba
+"
+columns = 5
+
+[node name="Mano Skin 1" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 5")
+focus_neighbor_top = NodePath("../Mano Skin 6")
+focus_neighbor_right = NodePath("../Mano Skin 2")
+focus_neighbor_bottom = NodePath("../Mano Skin 6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 2" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 1")
+focus_neighbor_top = NodePath("../Mano Skin 7")
+focus_neighbor_right = NodePath("../Mano Skin 3")
+focus_neighbor_bottom = NodePath("../Mano Skin 7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 3" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 2")
+focus_neighbor_top = NodePath("../Mano Skin 8")
+focus_neighbor_right = NodePath("../Mano Skin 4")
+focus_neighbor_bottom = NodePath("../Mano Skin 8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 4" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 3")
+focus_neighbor_top = NodePath("../Mano Skin 9")
+focus_neighbor_right = NodePath("../Mano Skin 5")
+focus_neighbor_bottom = NodePath("../Mano Skin 8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 5" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 4")
+focus_neighbor_top = NodePath("../Mano Skin 10")
+focus_neighbor_right = NodePath("../Mano Skin 1")
+focus_neighbor_bottom = NodePath("../Mano Skin 10")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 6" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 10")
+focus_neighbor_top = NodePath("../Mano Skin 1")
+focus_neighbor_right = NodePath("../Mano Skin 7")
+focus_neighbor_bottom = NodePath("../Mano Skin 1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 7" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 6")
+focus_neighbor_top = NodePath("../Mano Skin 2")
+focus_neighbor_right = NodePath("../Mano Skin 8")
+focus_neighbor_bottom = NodePath("../Mano Skin 2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 8" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 7")
+focus_neighbor_top = NodePath("../Mano Skin 3")
+focus_neighbor_right = NodePath("../Mano Skin 9")
+focus_neighbor_bottom = NodePath("../Mano Skin 3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 9" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 8")
+focus_neighbor_top = NodePath("../Mano Skin 4")
+focus_neighbor_right = NodePath("../Mano Skin 10")
+focus_neighbor_bottom = NodePath("../Mano Skin 4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 10" type="Button" parent="Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 9")
+focus_neighbor_top = NodePath("../Mano Skin 5")
+focus_neighbor_right = NodePath("../Mano Skin 6")
+focus_neighbor_bottom = NodePath("../Mano Skin 5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("4_i6t4k")
+
+[node name="Container Skins Ojo" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.481
+anchor_top = 0.5
+anchor_right = 1.481
+anchor_bottom = 0.5
+offset_left = 43.8881
+offset_top = 47.0
+offset_right = 259.888
+offset_bottom = 131.0
+scale = Vector2(2.16637, 2.16637)
+tooltip_text = "prueba
+"
+columns = 5
+
+[node name="Ojo Skin 1" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 5")
+focus_neighbor_top = NodePath("../Ojo Skin 6")
+focus_neighbor_right = NodePath("../Ojo Skin 2")
+focus_neighbor_bottom = NodePath("../Ojo Skin 6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 2" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 1")
+focus_neighbor_top = NodePath("../Ojo Skin 7")
+focus_neighbor_right = NodePath("../Ojo Skin 3")
+focus_neighbor_bottom = NodePath("../Ojo Skin 7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 3" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 2")
+focus_neighbor_top = NodePath("../Ojo Skin 8")
+focus_neighbor_right = NodePath("../Ojo Skin 4")
+focus_neighbor_bottom = NodePath("../Ojo Skin 8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 4" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 3")
+focus_neighbor_top = NodePath("../Ojo Skin 9")
+focus_neighbor_right = NodePath("../Ojo Skin 5")
+focus_neighbor_bottom = NodePath("../Ojo Skin 8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 5" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 4")
+focus_neighbor_top = NodePath("../Ojo Skin 10")
+focus_neighbor_right = NodePath("../Ojo Skin 1")
+focus_neighbor_bottom = NodePath("../Ojo Skin 10")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 6" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 10")
+focus_neighbor_top = NodePath("../Ojo Skin 1")
+focus_neighbor_right = NodePath("../Ojo Skin 7")
+focus_neighbor_bottom = NodePath("../Ojo Skin 1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 7" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 6")
+focus_neighbor_top = NodePath("../Ojo Skin 2")
+focus_neighbor_right = NodePath("../Ojo Skin 8")
+focus_neighbor_bottom = NodePath("../Ojo Skin 2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 8" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 7")
+focus_neighbor_top = NodePath("../Ojo Skin 3")
+focus_neighbor_right = NodePath("../Ojo Skin 9")
+focus_neighbor_bottom = NodePath("../Ojo Skin 3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 9" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 8")
+focus_neighbor_top = NodePath("../Ojo Skin 4")
+focus_neighbor_right = NodePath("../Ojo Skin 10")
+focus_neighbor_bottom = NodePath("../Ojo Skin 4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 10" type="Button" parent="Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 9")
+focus_neighbor_top = NodePath("../Ojo Skin 5")
+focus_neighbor_right = NodePath("../Ojo Skin 6")
+focus_neighbor_bottom = NodePath("../Ojo Skin 5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3mp27")
+icon = ExtResource("5_uiyb8")
+
+[node name="Elige tu skin!" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.468
+anchor_right = 1.0
+anchor_bottom = 0.468
+offset_left = 442.0
+offset_top = -25.264
+offset_right = 660.0
+offset_bottom = 24.736
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndvgp")
+text = "Elige tu skin!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Container_Menu/Escalar" to="." method="_on_escalar_pressed"]
+[connection signal="pressed" from="Container_Menu/Scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="Container_Menu/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 1" to="." method="_on_mano_skin_1_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 2" to="." method="_on_mano_skin_2_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 3" to="." method="_on_mano_skin_3_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 4" to="." method="_on_mano_skin_4_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 5" to="." method="_on_mano_skin_5_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 6" to="." method="_on_mano_skin_6_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 7" to="." method="_on_mano_skin_7_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 8" to="." method="_on_mano_skin_8_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 9" to="." method="_on_mano_skin_9_pressed"]
+[connection signal="pressed" from="Container Skins Mano/Mano Skin 10" to="." method="_on_mano_skin_10_pressed"]

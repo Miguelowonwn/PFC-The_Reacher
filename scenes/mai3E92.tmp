@@ -1,0 +1,2008 @@
+[gd_scene load_steps=59 format=3 uid="uid://dxp5ylkvydj17"]
+
+[ext_resource type="Texture2D" uid="uid://i2bl7bpp5xqr" path="res://sprites/background/Cartoon_Forest_BG_01.png" id="1_1apih"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vp5u2"]
+[ext_resource type="FontFile" uid="uid://msbi0lieg2it" path="res://resources/alagard.ttf" id="2_mqq26"]
+[ext_resource type="Texture2D" uid="uid://dikjuw2e1u21x" path="res://sprites/glove_no_grab.png" id="4_i6t4k"]
+[ext_resource type="Texture2D" uid="uid://cgjy782n3fokv" path="res://sprites/statue_eye/sprite_0.png" id="5_uiyb8"]
+[ext_resource type="Texture2D" uid="uid://b5rjqmcls5hnm" path="res://resources/nivel 1.png" id="6_0emuk"]
+[ext_resource type="Texture2D" uid="uid://6ckad67ll17x" path="res://resources/nivel 1 - copia.png" id="7_lup1j"]
+[ext_resource type="Texture2D" uid="uid://bjcmq8le5xgdr" path="res://resources/medallas.png" id="9_q5n7y"]
+[ext_resource type="Script" path="res://scripts/lista_stats.gd" id="9_r7ts2"]
+[ext_resource type="Script" path="res://scripts/scores_individuales_por_nivel.gd" id="10_6qyjm"]
+[ext_resource type="Script" path="res://scripts/ajustes.gd" id="10_hkm7c"]
+[ext_resource type="Script" path="res://scripts/score_table.gd" id="10_uwdi8"]
+[ext_resource type="Script" path="res://scripts/v_slider.gd" id="10_vksor"]
+[ext_resource type="Script" path="res://scripts/v_slider_musica.gd" id="11_2p837"]
+[ext_resource type="AudioStream" uid="uid://d1dgl8jiyyxd" path="res://resources/musicNsounds/menu.mp3" id="12_vb3en"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apjcn"]
+texture = ExtResource("1_1apih")
+
+[sub_resource type="Animation" id="Animation_dn8im"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPrincipal/Container_Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(394, 332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal/Titulo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(205, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal/Exit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(902, 566)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SeleccionNivel/Container Skins Mano:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1213, 371)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SeleccionNivel/Container Skins Ojo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1750, 371)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SeleccionNivel/Elige tu skin!:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1594, 278)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SeleccionNivel/Container Niveles:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1213, 68)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SeleccionNivel/Elige el Mapa!:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1242, 243)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MenuPrincipal/Container_Menu:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MenuPrincipal/Container_Menu/Escalar:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MenuPrincipal/Container_Menu/Escalar:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MenuPrincipal/Container_Menu/Scores:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 55)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MenuPrincipal/Container_Menu/Scores:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("MenuPrincipal/Container_Menu/Progreso:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 110)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("MenuPrincipal/Container_Menu/Progreso:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("MenuPrincipal/Titulo:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("MenuPrincipal/Exit:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SeleccionNivel/Container Skins Mano:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SeleccionNivel/Container Skins Ojo:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SeleccionNivel/Elige tu skin!:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SeleccionNivel/Elige el Mapa!:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SeleccionNivel/Container Niveles:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("SeleccionNivel:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SeleccionNivel:rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("MenuPrincipal:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("MenuPrincipal:rotation")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("TablaScores:rotation")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("TablaScores:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1138, 68)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Progreso:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -787)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Progreso:rotation")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Ajustes:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 1033)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Ajustes:rotation")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gb07c"]
+resource_name = "fade_ajustes"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPrincipal:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-15, -710)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ajustes:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 1033), Vector2(561, 323)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ajustes:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_miqmw"]
+resource_name = "fade_escalar"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPrincipal/Container_Menu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333, 1.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(394, 332), Vector2(-659, 332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal/Titulo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333301, 1.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(205, 123), Vector2(-848, 123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal/Exit:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(902, 566), Vector2(-151, 566)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SeleccionNivel/Container Skins Mano:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.333333, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1213, 371), Vector2(73, 371)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SeleccionNivel/Container Skins Ojo:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.266666, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1750, 371), Vector2(672, 371)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SeleccionNivel/Elige tu skin!:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.366667, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1549, 566), Vector2(72, 566)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SeleccionNivel/Container Niveles:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.666667, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1213, 68), Vector2(73, 68)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SeleccionNivel/Elige el Mapa!:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.933333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1242, 243), Vector2(98, 243)]
+}
+
+[sub_resource type="Animation" id="Animation_m7hlh"]
+resource_name = "fade_jugar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SeleccionNivel/Container Niveles:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(73, 68), Vector2(74, 726)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SeleccionNivel/Elige el Mapa!:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(98, 243), Vector2(99, 901)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SeleccionNivel/Elige tu skin!:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, 566), Vector2(73, 1224)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SeleccionNivel/Container Skins Mano:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666667, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(73, 371), Vector2(74, 1029)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SeleccionNivel/Container Skins Ojo:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(672, 371), Vector2(673, 1029)]
+}
+
+[sub_resource type="Animation" id="Animation_vlxnj"]
+resource_name = "fade_progreso"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progreso:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -787), Vector2(4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Progreso:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 787)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuPrincipal:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ko0yf"]
+resource_name = "scores_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SeleccionNivel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1242, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SeleccionNivel:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1242, 4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuPrincipal:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TablaScores:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TablaScores:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1138, 68), Vector2(292, 72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awl7p"]
+_data = {
+"RESET": SubResource("Animation_dn8im"),
+"fade_ajustes": SubResource("Animation_gb07c"),
+"fade_escalar": SubResource("Animation_miqmw"),
+"fade_jugar": SubResource("Animation_m7hlh"),
+"fade_progreso": SubResource("Animation_vlxnj"),
+"fade_scores": SubResource("Animation_ko0yf")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq41h"]
+bg_color = Color(0.797111, 0.70421, 0.378557, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjcvu"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ieyf5"]
+bg_color = Color(0.784248, 0.691647, 0.366515, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1a30"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aiya"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl5s0"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1302p"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfndh"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwmd6"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n1bn"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0d3m"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4npaq"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba3f3"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyysf"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57f1f"]
+bg_color = Color(0.118581, 0.118581, 0.118581, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndvgp"]
+bg_color = Color(0.183644, 0.203554, 0.151723, 1)
+border_color = Color(3.17663e-06, 0.944339, 0.633051, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_hggqt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrn0f"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqdej"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2yea"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m50it"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2n7"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtfef"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77pth"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xplfj"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwmaq"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu7as"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr2ij"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtuuh"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erdo5"]
+atlas = ExtResource("9_q5n7y")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgtvq"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slqie"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.333333, 0.298039, 0.176471, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5miau"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.342311, 0.293242, 0.117133, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpwaq"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_4mteq"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vp5u2")
+metadata/_edit_vertical_guides_ = [1152.0, 576.0]
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_apjcn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_awl7p")
+}
+
+[node name="MenuPrincipal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container_Menu" type="VBoxContainer" parent="MenuPrincipal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 374.0
+offset_top = 312.0
+offset_right = 727.0
+offset_bottom = 493.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.70007, 1.70007)
+pivot_offset = Vector2(180.827, 77.2652)
+theme_override_constants/separation = 15
+
+[node name="Escalar" type="Button" parent="MenuPrincipal/Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../Exit")
+focus_neighbor_top = NodePath("../Ajustes")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Scores")
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Escalar
+"
+
+[node name="Scores" type="Button" parent="MenuPrincipal/Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../Exit")
+focus_neighbor_top = NodePath("../Escalar")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Progreso")
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Scores"
+
+[node name="Progreso" type="Button" parent="MenuPrincipal/Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../Exit")
+focus_neighbor_top = NodePath("../Scores")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Ajustes")
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Progreso
+"
+
+[node name="Ajustes" type="Button" parent="MenuPrincipal/Container_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../../Exit")
+focus_neighbor_top = NodePath("../Progreso")
+focus_neighbor_right = NodePath("../../Exit")
+focus_neighbor_bottom = NodePath("../Escalar")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Ajustes"
+
+[node name="Titulo" type="Label" parent="MenuPrincipal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 185.0
+offset_top = 103.0
+offset_right = 929.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.625575, 1.43189e-06, 5.77569e-07, 1)
+theme_override_colors/font_shadow_color = Color(0.98275, 4.74088e-06, 5.77569e-07, 1)
+theme_override_constants/shadow_offset_x = -6
+theme_override_constants/shadow_offset_y = -3
+theme_override_fonts/font = ExtResource("2_mqq26")
+theme_override_font_sizes/font_size = 128
+text = "The Reacher"
+
+[node name="Exit" type="Button" parent="MenuPrincipal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 882.0
+offset_top = 546.0
+offset_right = 966.0
+offset_bottom = 580.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Container_Menu/Ajustes")
+focus_neighbor_top = NodePath("../Container_Menu/Ajustes")
+focus_neighbor_right = NodePath("../Container_Menu/Ajustes")
+focus_neighbor_bottom = NodePath("../Container_Menu/Escalar")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.329866, 0.282304, 0.111573, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxFlat_ieyf5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xq41h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjcvu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjcvu")
+text = "Salir"
+
+[node name="SeleccionNivel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container Niveles" type="HBoxContainer" parent="SeleccionNivel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.053
+anchor_top = 0.105
+anchor_right = 1.053
+anchor_bottom = 0.105
+offset_left = 1170.88
+offset_top = 63.8
+offset_right = 7940.88
+offset_bottom = 1056.8
+grow_horizontal = 2
+scale = Vector2(0.151435, 0.151435)
+theme_override_constants/separation = 535
+alignment = 1
+
+[node name="Nivel 1" type="TextureButton" parent="SeleccionNivel/Container Niveles"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Nivel 3")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Nivel 2")
+focus_neighbor_bottom = NodePath(".")
+mouse_filter = 2
+button_mask = 0
+texture_normal = ExtResource("6_0emuk")
+texture_focused = ExtResource("7_lup1j")
+
+[node name="Nivel 2" type="TextureButton" parent="SeleccionNivel/Container Niveles"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Nivel 1")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Nivel 3")
+focus_neighbor_bottom = NodePath(".")
+mouse_filter = 2
+texture_normal = ExtResource("6_0emuk")
+texture_focused = ExtResource("7_lup1j")
+
+[node name="Nivel 3" type="TextureButton" parent="SeleccionNivel/Container Niveles"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Nivel 2")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Nivel 1")
+focus_neighbor_bottom = NodePath(".")
+mouse_filter = 2
+texture_normal = ExtResource("6_0emuk")
+texture_focused = ExtResource("7_lup1j")
+
+[node name="Container Skins Mano" type="GridContainer" parent="SeleccionNivel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.573
+anchor_right = 1.0
+anchor_bottom = 0.573
+offset_left = 1173.0
+offset_top = 348.08
+offset_right = 1389.0
+offset_bottom = 432.08
+grow_vertical = 0
+scale = Vector2(2.16637, 2.16637)
+tooltip_text = "prueba
+"
+columns = 5
+
+[node name="Mano Skin 1" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 5")
+focus_neighbor_top = NodePath("../Mano Skin 6")
+focus_neighbor_right = NodePath("../Mano Skin 2")
+focus_neighbor_bottom = NodePath("../Mano Skin 6")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 2" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 1")
+focus_neighbor_top = NodePath("../Mano Skin 7")
+focus_neighbor_right = NodePath("../Mano Skin 3")
+focus_neighbor_bottom = NodePath("../Mano Skin 7")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 3" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 2")
+focus_neighbor_top = NodePath("../Mano Skin 8")
+focus_neighbor_right = NodePath("../Mano Skin 4")
+focus_neighbor_bottom = NodePath("../Mano Skin 8")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 4" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 3")
+focus_neighbor_top = NodePath("../Mano Skin 9")
+focus_neighbor_right = NodePath("../Mano Skin 5")
+focus_neighbor_bottom = NodePath("../Mano Skin 9")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 5" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 4")
+focus_neighbor_top = NodePath("../Mano Skin 10")
+focus_neighbor_right = NodePath("../Mano Skin 1")
+focus_neighbor_bottom = NodePath("../Mano Skin 10")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 6" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 10")
+focus_neighbor_top = NodePath("../Mano Skin 1")
+focus_neighbor_right = NodePath("../Mano Skin 7")
+focus_neighbor_bottom = NodePath("../Mano Skin 1")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 7" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 6")
+focus_neighbor_top = NodePath("../Mano Skin 2")
+focus_neighbor_right = NodePath("../Mano Skin 8")
+focus_neighbor_bottom = NodePath("../Mano Skin 2")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 8" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 7")
+focus_neighbor_top = NodePath("../Mano Skin 3")
+focus_neighbor_right = NodePath("../Mano Skin 9")
+focus_neighbor_bottom = NodePath("../Mano Skin 3")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 9" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 8")
+focus_neighbor_top = NodePath("../Mano Skin 4")
+focus_neighbor_right = NodePath("../Mano Skin 10")
+focus_neighbor_bottom = NodePath("../Mano Skin 4")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Mano Skin 10" type="Button" parent="SeleccionNivel/Container Skins Mano"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Mano Skin 9")
+focus_neighbor_top = NodePath("../Mano Skin 5")
+focus_neighbor_right = NodePath("../Mano Skin 6")
+focus_neighbor_bottom = NodePath("../Mano Skin 5")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("4_i6t4k")
+
+[node name="Container Skins Ojo" type="GridContainer" parent="SeleccionNivel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.481
+anchor_top = 0.5
+anchor_right = 1.481
+anchor_bottom = 0.5
+offset_left = 1690.76
+offset_top = 351.0
+offset_right = 1866.76
+offset_bottom = 419.0
+scale = Vector2(2.16637, 2.16637)
+tooltip_text = "prueba
+"
+columns = 5
+
+[node name="Ojo Skin 1" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 5")
+focus_neighbor_top = NodePath("../Ojo Skin 6")
+focus_neighbor_right = NodePath("../Ojo Skin 2")
+focus_neighbor_bottom = NodePath("../Ojo Skin 6")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tl5s0")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 2" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 1")
+focus_neighbor_top = NodePath("../Ojo Skin 7")
+focus_neighbor_right = NodePath("../Ojo Skin 3")
+focus_neighbor_bottom = NodePath("../Ojo Skin 7")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1302p")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 3" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 2")
+focus_neighbor_top = NodePath("../Ojo Skin 8")
+focus_neighbor_right = NodePath("../Ojo Skin 4")
+focus_neighbor_bottom = NodePath("../Ojo Skin 8")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfndh")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 4" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 3")
+focus_neighbor_top = NodePath("../Ojo Skin 9")
+focus_neighbor_right = NodePath("../Ojo Skin 5")
+focus_neighbor_bottom = NodePath("../Ojo Skin 8")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hwmd6")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 5" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 4")
+focus_neighbor_top = NodePath("../Ojo Skin 10")
+focus_neighbor_right = NodePath("../Ojo Skin 1")
+focus_neighbor_bottom = NodePath("../Ojo Skin 10")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8n1bn")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 6" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 10")
+focus_neighbor_top = NodePath("../Ojo Skin 1")
+focus_neighbor_right = NodePath("../Ojo Skin 7")
+focus_neighbor_bottom = NodePath("../Ojo Skin 1")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0d3m")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 7" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 6")
+focus_neighbor_top = NodePath("../Ojo Skin 2")
+focus_neighbor_right = NodePath("../Ojo Skin 8")
+focus_neighbor_bottom = NodePath("../Ojo Skin 2")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4npaq")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 8" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 7")
+focus_neighbor_top = NodePath("../Ojo Skin 3")
+focus_neighbor_right = NodePath("../Ojo Skin 9")
+focus_neighbor_bottom = NodePath("../Ojo Skin 3")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ba3f3")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 9" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 8")
+focus_neighbor_top = NodePath("../Ojo Skin 4")
+focus_neighbor_right = NodePath("../Ojo Skin 10")
+focus_neighbor_bottom = NodePath("../Ojo Skin 4")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iyysf")
+icon = ExtResource("5_uiyb8")
+
+[node name="Ojo Skin 10" type="Button" parent="SeleccionNivel/Container Skins Ojo"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Ojo Skin 9")
+focus_neighbor_top = NodePath("../Ojo Skin 5")
+focus_neighbor_right = NodePath("../Ojo Skin 6")
+focus_neighbor_bottom = NodePath("../Ojo Skin 5")
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_i1a30")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7aiya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_57f1f")
+icon = ExtResource("5_uiyb8")
+
+[node name="Elige tu skin!" type="Label" parent="SeleccionNivel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.912
+anchor_right = 0.5
+anchor_bottom = 0.912
+offset_left = 1574.0
+offset_top = 241.52
+offset_right = 2559.0
+offset_bottom = 291.52
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndvgp")
+text = "Elige tu skin!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Elige el Mapa!" type="Label" parent="SeleccionNivel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.078
+anchor_top = 0.375
+anchor_right = 1.078
+anchor_bottom = 0.375
+offset_left = 1198.88
+offset_top = 228.0
+offset_right = 2183.89
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndvgp")
+text = "Elige el nivel! "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TablaScores" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1714.0
+offset_top = -256.0
+offset_right = -1147.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hggqt")
+
+[node name="PanelContainer" type="PanelContainer" parent="TablaScores"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.5
+offset_top = -171.5
+offset_right = 661.5
+offset_bottom = 391.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.78414, 0.78414)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrn0f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TablaScores/PanelContainer"]
+layout_mode = 2
+
+[node name="Filtros" type="HBoxContainer" parent="TablaScores/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Filtrar por nivel"
+
+[node name="FiltroNivel" type="OptionButton" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../FiltrarUsuario")
+focus_neighbor_right = NodePath("../MejoresTiempos")
+mouse_filter = 2
+item_count = 4
+popup/item_0/text = "Todos"
+popup/item_1/text = "Nivel 1"
+popup/item_1/id = 1
+popup/item_2/text = "Nivel 2"
+popup/item_2/id = 2
+popup/item_3/text = "Nivel 3"
+popup/item_3/id = 3
+
+[node name="Separador" type="Control" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Filtrar por mejor tiempo"
+
+[node name="MejoresTiempos" type="CheckBox" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../FiltroNivel")
+focus_neighbor_right = NodePath("../FiltrarUsuario")
+mouse_filter = 2
+
+[node name="Separador2" type="Control" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Filtrar por usuario"
+
+[node name="FiltrarUsuario" type="LineEdit" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../MejoresTiempos")
+focus_neighbor_right = NodePath("../FiltroNivel")
+editable = false
+selecting_enabled = false
+
+[node name="ItemList" type="ItemList" parent="TablaScores/PanelContainer/VBoxContainer"]
+visibility_layer = 512
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Filtros/FiltroNivel")
+focus_neighbor_bottom = NodePath("../Filtros/FiltroNivel")
+auto_height = true
+same_column_width = true
+script = ExtResource("10_uwdi8")
+
+[node name="Progreso" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -572.0
+offset_top = -1111.0
+offset_right = 575.0
+offset_bottom = -474.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Progreso"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.5
+offset_top = 90.5
+offset_right = 119.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.78414, 0.78414)
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrn0f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Progreso/PanelContainer"]
+layout_mode = 2
+
+[node name="StatsYItemList" type="HBoxContainer" parent="Progreso/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListaStats" type="ItemList" parent="Progreso/PanelContainer/VBoxContainer/StatsYItemList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text_overrun_behavior = 0
+item_count = 12
+max_columns = 2
+item_0/text = "Skin mano más usada:"
+item_1/selectable = false
+item_2/text = "Skin ojo más usada:"
+item_4/text = "Progreso total:"
+item_4/selectable = false
+item_6/text = "Mapa más jugado:"
+item_6/selectable = false
+item_8/text = "Partidas jugadas:"
+item_8/selectable = false
+item_10/text = "Muertes totales:"
+item_10/selectable = false
+script = ExtResource("9_r7ts2")
+
+[node name="ListaMedallas" type="ItemList" parent="Progreso/PanelContainer/VBoxContainer/StatsYItemList"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+allow_search = false
+text_overrun_behavior = 0
+item_count = 12
+max_columns = 3
+same_column_width = true
+fixed_column_width = 180
+icon_mode = 0
+icon_scale = 3.0
+item_0/text = "N1 - Sin morir"
+item_0/icon = SubResource("AtlasTexture_lqdej")
+item_1/text = "N2 -Sin morir"
+item_1/icon = SubResource("AtlasTexture_e2yea")
+item_2/text = "N3 -Sin morir"
+item_2/icon = SubResource("AtlasTexture_m50it")
+item_3/text = "N1 - Runner"
+item_3/icon = SubResource("AtlasTexture_fc2n7")
+item_4/text = "N2 - Runner"
+item_4/icon = SubResource("AtlasTexture_gtfef")
+item_5/text = "N3 - Runner"
+item_5/icon = SubResource("AtlasTexture_77pth")
+item_6/text = "N1 - Coins"
+item_6/icon = SubResource("AtlasTexture_xplfj")
+item_7/text = "N2 - Coins"
+item_7/icon = SubResource("AtlasTexture_hwmaq")
+item_8/text = "N3 - Coins"
+item_8/icon = SubResource("AtlasTexture_yu7as")
+item_9/text = "Shiny"
+item_9/icon = SubResource("AtlasTexture_hr2ij")
+item_10/text = "100 Coins"
+item_10/icon = SubResource("AtlasTexture_dtuuh")
+item_11/text = "Platino"
+item_11/icon = SubResource("AtlasTexture_erdo5")
+
+[node name="PanelContainer" type="PanelContainer" parent="Progreso/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Estadísticas de Scores"
+label_settings = SubResource("LabelSettings_wgtvq")
+horizontal_alignment = 1
+
+[node name="SelectorNiveles" type="OptionButton" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+item_count = 4
+popup/item_0/text = "Todos"
+popup/item_1/text = "Nivel 1"
+popup/item_1/id = 1
+popup/item_2/text = "Nivel 2"
+popup/item_2/id = 2
+popup/item_3/text = "Nivel 3"
+popup/item_3/id = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_slqie")
+
+[node name="Scores por nivel" type="ItemList" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+visibility_layer = 512
+layout_mode = 2
+size_flags_vertical = 3
+auto_height = true
+same_column_width = true
+script = ExtResource("10_6qyjm")
+
+[node name="Ajustes" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 1033.0
+offset_right = 616.0
+offset_bottom = 1073.0
+script = ExtResource("10_hkm7c")
+
+[node name="PanelContainerBg" type="PanelContainer" parent="Ajustes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -251.0
+offset_right = 469.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5miau")
+
+[node name="PanelContainer" type="PanelContainer" parent="Ajustes/PanelContainerBg"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpwaq")
+
+[node name="MarginContainer" type="MarginContainer" parent="Ajustes/PanelContainerBg/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelGenerales" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ajustes generales"
+label_settings = SubResource("LabelSettings_4mteq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelsAjustes" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelVideo" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/LabelsAjustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vídeo
+"
+label_settings = SubResource("LabelSettings_4mteq")
+horizontal_alignment = 1
+
+[node name="LabelSonido" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/LabelsAjustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sonido"
+label_settings = SubResource("LabelSettings_4mteq")
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Controladores" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContainerResolucion" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolucion" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+layout_mode = 2
+text = "Resolución"
+label_settings = SubResource("LabelSettings_4mteq")
+
+[node name="Control4" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="OptionResolucion" type="VBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="OptionButton" type="OptionButton" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion/OptionResolucion"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../../SliderMusica/VSlider")
+focus_neighbor_top = NodePath("../../../../FullScreenYEfectos/HBoxResolucion/FullScreenCheckBox")
+focus_neighbor_right = NodePath("../../../SliderMusica/VSlider")
+focus_neighbor_bottom = NodePath("../../../../FullScreenYEfectos/HBoxResolucion/FullScreenCheckBox")
+mouse_filter = 2
+
+[node name="Control3" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="SliderMusica" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Música"
+label_settings = SubResource("LabelSettings_4mteq")
+
+[node name="Control5" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VSlider" type="HSlider" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(20, 30)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../ContainerResolucion/OptionResolucion/OptionButton")
+focus_neighbor_top = NodePath("../../ContainerResolucion/OptionResolucion/OptionButton")
+focus_neighbor_right = NodePath("../../ContainerResolucion/OptionResolucion/OptionButton")
+focus_neighbor_bottom = NodePath("../../../FullScreenYEfectos/ContainerEfectos/VSlider")
+mouse_filter = 2
+max_value = 10.0
+value = 5.0
+script = ExtResource("11_2p837")
+bus_name = "Music"
+
+[node name="Control4" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="FullScreenYEfectos" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxResolucion" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxResolucion"]
+layout_mode = 2
+text = "FullScreen"
+label_settings = SubResource("LabelSettings_4mteq")
+
+[node name="FullScreenCheckBox" type="CheckBox" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxResolucion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../ContainerEfectos/VSlider")
+focus_neighbor_top = NodePath("../../../Controladores/ContainerResolucion/OptionResolucion/OptionButton")
+focus_neighbor_right = NodePath("../../ContainerEfectos/VSlider")
+focus_neighbor_bottom = NodePath("../../../Controladores/ContainerResolucion/OptionResolucion/OptionButton")
+mouse_filter = 2
+theme_override_font_sizes/font_size = 0
+
+[node name="Control3" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxResolucion"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ContainerEfectos" type="HBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Efectos
+"
+label_settings = SubResource("LabelSettings_4mteq")
+
+[node name="Control5" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VSlider" type="HSlider" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(20, 30)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../HBoxResolucion/FullScreenCheckBox")
+focus_neighbor_top = NodePath("../../../Controladores/SliderMusica/VSlider")
+focus_neighbor_right = NodePath("../../HBoxResolucion/FullScreenCheckBox")
+focus_neighbor_bottom = NodePath("../../../Controladores/SliderMusica/VSlider")
+mouse_filter = 2
+max_value = 10.0
+value = 5.0
+script = ExtResource("10_vksor")
+bus_name = "Effects"
+
+[node name="Control4" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_vb3en")
+volume_db = -40.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="MenuPrincipal/Container_Menu/Escalar" to="." method="_on_escalar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Container_Menu/Scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Container_Menu/Progreso" to="." method="_on_progreso_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Container_Menu/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Niveles/Nivel 1" to="." method="_on_nivel_1_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Niveles/Nivel 2" to="." method="_on_nivel_2_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Niveles/Nivel 3" to="." method="_on_nivel_3_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 1" to="." method="_on_mano_skin_1_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 2" to="." method="_on_mano_skin_2_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 3" to="." method="_on_mano_skin_3_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 4" to="." method="_on_mano_skin_4_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 5" to="." method="_on_mano_skin_5_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 6" to="." method="_on_mano_skin_6_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 7" to="." method="_on_mano_skin_7_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 8" to="." method="_on_mano_skin_8_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 9" to="." method="_on_mano_skin_9_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Mano/Mano Skin 10" to="." method="_on_mano_skin_10_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 1" to="." method="_on_ojo_skin_1_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 2" to="." method="_on_ojo_skin_2_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 3" to="." method="_on_ojo_skin_3_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 4" to="." method="_on_ojo_skin_4_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 5" to="." method="_on_ojo_skin_5_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 6" to="." method="_on_ojo_skin_6_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 7" to="." method="_on_ojo_skin_7_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 8" to="." method="_on_ojo_skin_8_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 9" to="." method="_on_ojo_skin_9_pressed"]
+[connection signal="pressed" from="SeleccionNivel/Container Skins Ojo/Ojo Skin 10" to="." method="_on_ojo_skin_10_pressed"]
+[connection signal="item_selected" from="TablaScores/PanelContainer/VBoxContainer/Filtros/FiltroNivel" to="TablaScores/PanelContainer/VBoxContainer/ItemList" method="_on_filtro_nivel_item_selected"]
+[connection signal="toggled" from="TablaScores/PanelContainer/VBoxContainer/Filtros/MejoresTiempos" to="TablaScores/PanelContainer/VBoxContainer/ItemList" method="_on_mejores_tiempos_toggled"]
+[connection signal="text_changed" from="TablaScores/PanelContainer/VBoxContainer/Filtros/FiltrarUsuario" to="TablaScores/PanelContainer/VBoxContainer/ItemList" method="_on_filtrar_usuario_text_changed"]
+[connection signal="item_selected" from="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/SelectorNiveles" to="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/Scores por nivel" method="_on_selector_niveles_item_selected"]
+[connection signal="item_selected" from="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion/OptionResolucion/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxResolucion/FullScreenCheckBox" to="." method="_on_full_screen_check_box_toggled"]

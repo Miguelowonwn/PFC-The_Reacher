@@ -1,0 +1,328 @@
+[gd_scene load_steps=11 format=3 uid="uid://ldit7w1t2rue"]
+
+[ext_resource type="Script" path="res://scripts/escape_menu.gd" id="1_wwqdf"]
+[ext_resource type="Script" path="res://scripts/v_slider_musica.gd" id="2_idvha"]
+[ext_resource type="Script" path="res://scripts/v_slider.gd" id="3_sd7tf"]
+[ext_resource type="PackedScene" uid="uid://csdbmk2b2thuk" path="res://scenes/mapeo.tscn" id="4_1ko2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk22a"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.409395, 0.352286, 0.147547, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do1qx"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgtvq"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_sdguw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oom01"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.342311, 0.293242, 0.117133, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32hmt"]
+bg_color = Color(0.682353, 0.596078, 0.290196, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MenuEscape" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.00775)
+script = ExtResource("1_wwqdf")
+
+[node name="SalirBox" type="PanelContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -128.5
+offset_right = 263.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xk22a")
+
+[node name="ContainerSalir" type="PanelContainer" parent="SalirBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_do1qx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SalirBox/ContainerSalir"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="SalirBox/ContainerSalir/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SalirBox/ContainerSalir/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "¿Seguro que quieres salir?"
+label_settings = SubResource("LabelSettings_wgtvq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SalirBox/ContainerSalir/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="AceptarSalir" type="Button" parent="SalirBox/ContainerSalir/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_sdguw")
+theme_override_font_sizes/font_size = 20
+text = "Salir al menú"
+
+[node name="CancelarSalir" type="Button" parent="SalirBox/ContainerSalir/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Cancelar
+"
+
+[node name="Control" type="Control" parent="SalirBox/ContainerSalir/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainerBg" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -251.0
+offset_right = 469.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oom01")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainerBg"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_32hmt")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainerBg/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelGenerales" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ajustes generales"
+label_settings = SubResource("LabelSettings_wgtvq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelsAjustes" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelVideo" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/LabelsAjustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vídeo
+"
+label_settings = SubResource("LabelSettings_wgtvq")
+horizontal_alignment = 1
+
+[node name="LabelSonido" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/LabelsAjustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sonido"
+label_settings = SubResource("LabelSettings_wgtvq")
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Controladores" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContainerResolucion" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Resolucion" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+layout_mode = 2
+text = "Resolución"
+label_settings = SubResource("LabelSettings_wgtvq")
+
+[node name="Control4" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="OptionResolucion" type="VBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion/OptionResolucion"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../../SliderMusica/VSlider")
+focus_neighbor_top = NodePath("../../../../SalirMenuPrincipal")
+focus_neighbor_right = NodePath("../../../SliderMusica/VSlider")
+focus_neighbor_bottom = NodePath("../../../../FullScreenYEfectos/HBoxContainer/FullScreenCheckBox")
+
+[node name="Control3" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="SliderMusica" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Música"
+label_settings = SubResource("LabelSettings_wgtvq")
+
+[node name="Control5" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VSlider" type="HSlider" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(20, 30)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+script = ExtResource("2_idvha")
+bus_name = "Music"
+
+[node name="Control4" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="FullScreenYEfectos" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxContainer"]
+layout_mode = 2
+text = "FullScreen"
+label_settings = SubResource("LabelSettings_wgtvq")
+
+[node name="FullScreenCheckBox" type="CheckBox" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../../ContainerEfectos/VSlider")
+focus_neighbor_top = NodePath("../../../Controladores/ContainerResolucion/OptionResolucion/OptionButton")
+focus_neighbor_right = NodePath("../../ContainerEfectos/VSlider")
+focus_neighbor_bottom = NodePath("../../../SalirMenuPrincipal")
+theme_override_font_sizes/font_size = 0
+
+[node name="Control3" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ContainerEfectos" type="HBoxContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Efectos
+"
+label_settings = SubResource("LabelSettings_wgtvq")
+
+[node name="Control5" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VSlider" type="HSlider" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(20, 30)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+script = ExtResource("3_sd7tf")
+
+[node name="Control4" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="SalirMenuPrincipal" type="Button" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../FullScreenYEfectos/HBoxContainer/FullScreenCheckBox")
+focus_neighbor_bottom = NodePath("../Controladores/ContainerResolucion/OptionResolucion/OptionButton")
+text = "Volver al menu principal"
+
+[node name="Mapeo" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_1ko2k")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PanelContainer" parent="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Mapeo" index="0"]
+offset_left = -424.0
+offset_top = -275.0
+offset_right = 566.0
+offset_bottom = -10.0
+scale = Vector2(0.855165, 0.855165)
+
+[connection signal="pressed" from="SalirBox/ContainerSalir/VBoxContainer/HBoxContainer/AceptarSalir" to="." method="_on_aceptar_salir_pressed"]
+[connection signal="pressed" from="SalirBox/ContainerSalir/VBoxContainer/HBoxContainer/CancelarSalir" to="." method="_on_cancelar_salir_pressed"]
+[connection signal="item_selected" from="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/ContainerResolucion/OptionResolucion/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Controladores/SliderMusica/VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="toggled" from="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/HBoxContainer/FullScreenCheckBox" to="." method="_on_full_screen_check_box_toggled"]
+[connection signal="pressed" from="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/SalirMenuPrincipal" to="." method="_on_salir_menu_principal_pressed"]
+
+[editable path="PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Mapeo"]

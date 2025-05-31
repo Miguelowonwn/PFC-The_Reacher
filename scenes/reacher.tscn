@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://1khlwc6xsmeo"]
+
+[ext_resource type="Script" path="res://scripts/left_hand.gd" id="1_ua35f"]
+[ext_resource type="Script" path="res://scripts/right_hand.gd" id="2_h3vuj"]
+[ext_resource type="Script" path="res://scripts/eye.gd" id="3_op81r"]
+[ext_resource type="AudioStream" uid="uid://cjvovbhuse2oj" path="res://resources/musicNsounds/select_sound.mp3" id="5_avfjw"]
+[ext_resource type="Texture2D" uid="uid://drdptoofmi0ty" path="res://sprites/skins/eye/eye_skins_animation.png" id="9_qvquv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_shrxo"]
+load_path = "res://.godot/imported/glove_no_grab.png-e6eddf30985972df9faf59fdb098c3c5.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bp7h"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4d1cc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqobu"]
+atlas = ExtResource("9_qvquv")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Reacher" type="Node2D" groups=["Reacher"]]
+metadata/_edit_horizontal_guides_ = [-114.0]
+
+[node name="Left_hand" type="CharacterBody2D" parent="." groups=["Reacher"]]
+z_index = 1
+scale = Vector2(5, 5)
+script = ExtResource("1_ua35f")
+
+[node name="SpriteLeftHand" type="Sprite2D" parent="Left_hand"]
+position = Vector2(-40.8, -43.8)
+texture = SubResource("CompressedTexture2D_shrxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_hand"]
+position = Vector2(-42.8, -45.8)
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Area2D" type="Area2D" parent="Left_hand" groups=["Left_Hand"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Left_hand/Area2D"]
+position = Vector2(-42.8, -45.8)
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Right_hand" type="CharacterBody2D" parent="." groups=["Reacher"]]
+z_index = 1
+scale = Vector2(5, 5)
+script = ExtResource("2_h3vuj")
+
+[node name="SpriteRightHand" type="Sprite2D" parent="Right_hand"]
+position = Vector2(42.2, -43.8)
+texture = SubResource("CompressedTexture2D_shrxo")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_hand"]
+position = Vector2(44.2, -45.8)
+rotation = -0.0340298
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Area2D" type="Area2D" parent="Right_hand" groups=["Right_Hand"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Right_hand/Area2D"]
+position = Vector2(44.2, -45.8)
+rotation = -0.0340298
+shape = SubResource("CircleShape2D_4bp7h")
+
+[node name="Eye" type="RigidBody2D" parent="." groups=["Eye", "Reacher"]]
+physics_interpolation_mode = 2
+position = Vector2(0, 119)
+gravity_scale = 0.5
+lock_rotation = true
+script = ExtResource("3_op81r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eye"]
+position = Vector2(0, -114)
+rotation = 1.57079
+scale = Vector2(3.13134, 4.04371)
+shape = SubResource("CircleShape2D_4d1cc")
+
+[node name="Camera2D" type="Camera2D" parent="Eye"]
+position = Vector2(0, -229)
+scale = Vector2(9.74285, 8.02316)
+position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Eye"]
+position = Vector2(0, -114)
+scale = Vector2(5.23909, 5.23909)
+texture = SubResource("AtlasTexture_vqobu")
+
+[node name="LefthandJoint" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-214, -152)
+rotation = -0.864908
+node_a = NodePath("../Left_hand")
+node_b = NodePath("../Eye")
+disable_collision = false
+length = 20.0
+rest_length = 20.0
+damping = 16.0
+
+[node name="RighthandJoint" type="DampedSpringJoint2D" parent="."]
+position = Vector2(226, -139)
+rotation = 0.875454
+node_a = NodePath("../Eye")
+node_b = NodePath("../Right_hand")
+disable_collision = false
+length = 20.0
+rest_length = 20.0
+damping = 16.0
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_avfjw")
+volume_db = -25.0
+pitch_scale = 15.48
+bus = &"Effects"
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -229)
+node_a = NodePath("../Left_hand")
+node_b = NodePath("../Right_hand")
+softness = 16.0

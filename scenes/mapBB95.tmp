@@ -1,0 +1,197 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcr5kk73drwqm"]
+
+[ext_resource type="Script" path="res://scripts/pause_node.gd" id="1_gt6ux"]
+[ext_resource type="Texture2D" uid="uid://dlbrng48nvup1" path="res://resources/Mapa niveles/torre 1.png" id="1_h7y2l"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_kt5kk"]
+[ext_resource type="Texture2D" uid="uid://04kp4v51dql0" path="res://resources/Mapa niveles/torre 2.png" id="2_l8dvm"]
+[ext_resource type="Texture2D" uid="uid://cux56g1ntf8uh" path="res://resources/Mapa niveles/torre izquierda.png" id="3_1ep3n"]
+[ext_resource type="Texture2D" uid="uid://d28474asxkp7w" path="res://resources/Mapa niveles/torre derecha.png" id="4_qc7ek"]
+[ext_resource type="Texture2D" uid="uid://8op8d4y3dpsj" path="res://resources/Mapa niveles/9285000.jpg" id="5_jcmf5"]
+[ext_resource type="PackedScene" uid="uid://1khlwc6xsmeo" path="res://scenes/reacher.tscn" id="6_kdlur"]
+[ext_resource type="PackedScene" uid="uid://culfahvqewp2m" path="res://scenes/coin.tscn" id="8_ga1iy"]
+[ext_resource type="PackedScene" uid="uid://ldit7w1t2rue" path="res://scenes/ajustes.tscn" id="9_efsn1"]
+[ext_resource type="AudioStream" uid="uid://clsjypybvlwpn" path="res://resources/musicNsounds/1-01 - Happy Adventure, Delightful Adventure.mp3" id="10_5q818"]
+[ext_resource type="Script" path="res://scripts/v_slider.gd" id="10_caret"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yj0iw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kt5kk")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(958, -64)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(1086, -192)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(1232, -342)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(1328, -538)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(1352, -766)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(1124, -962)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("8_ga1iy")]
+z_index = 1
+position = Vector2(826, -1020)
+scale = Vector2(0.405215, 0.405215)
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(28, 456)
+
+[node name="9285000" type="Sprite2D" parent="Background"]
+position = Vector2(2210, -5270)
+scale = Vector2(4.5965, 5.66314)
+texture = ExtResource("5_jcmf5")
+
+[node name="Reacher" parent="." instance=ExtResource("6_kdlur")]
+z_index = 2
+position = Vector2(772, 299)
+scale = Vector2(0.462491, 0.462491)
+
+[node name="Torre1" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="Sprite2D" parent="Torre1"]
+position = Vector2(785, -1372)
+scale = Vector2(1.80137, 1.80886)
+texture = ExtResource("1_h7y2l")
+
+[node name="Area2D" type="Area2D" parent="Torre1/RigidBody2D" groups=["Musgo"]]
+position = Vector2(-418.016, 723.108)
+scale = Vector2(0.527633, 0.527633)
+
+[node name="Musgo2" type="CollisionPolygon2D" parent="Torre1/RigidBody2D/Area2D"]
+position = Vector2(1032, -2190)
+rotation = -3.14159
+scale = Vector2(1.61994, 1.96005)
+polygon = PackedVector2Array(102.473, -89.2839, 273.466, -224.996, 294.454, -288.259, 315.442, -380.604, 388.901, -429.583, 354.331, -614.783, 479.644, -674.986, 616.069, -585.703, 661.134, -314.281, 682.125, 11.7319, 567.306, 170.402, 315.445, 176.015, 232.109, 245.401, 10.1143, 254.988, -79.0142, 196.424, -37.0377, 127.038, 53.7062, 86.7325)
+
+[node name="Area2D" type="Area2D" parent="Torre1" groups=["Musgo"]]
+
+[node name="Musgo1" type="CollisionPolygon2D" parent="Torre1/Area2D" groups=["Torre"]]
+position = Vector2(485, -88)
+scale = Vector2(1.87852, 1.87852)
+polygon = PackedVector2Array(-30.343, 72.3974, 88.8997, -92.0938, 276.281, -152.248, 377.425, -228.371, 407.768, -294.381, 387.539, -355.067, 334.306, -388.071, 225.71, -408.3, 113.919, -451.419, 76.1237, -486.553, 86.2381, -534.996, 152.247, -552.563, 293.848, -519.558, 394.992, -547.772, 529.672, -552.563, 585.035, -365.181, 560.015, -144.795, 471.116, -71.3327, 367.31, 138.939, 268.829, 273.087, 10.1143, 254.988)
+
+[node name="Torre2" type="Node2D" parent="."]
+
+[node name="Torre2" type="Sprite2D" parent="Torre2"]
+z_index = 1
+position = Vector2(3321, -1360)
+scale = Vector2(1.98631, 1.98631)
+texture = ExtResource("2_l8dvm")
+
+[node name="Area2D" type="Area2D" parent="Torre2" groups=["Musgo"]]
+
+[node name="Musgo3" type="CollisionPolygon2D" parent="Torre2/Area2D"]
+position = Vector2(3519, -2393)
+polygon = PackedVector2Array(-1019, 256, -1116, 13, -929, -191, -488, -140, -199, -89, 186, -117, 610, -55, 649, 188, 536, 375, 180, 364, -171, 324, -759, 301)
+
+[node name="Torre3" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Torre3" groups=["Musgo"]]
+position = Vector2(2476, -1857)
+
+[node name="Musgo4" type="CollisionPolygon2D" parent="Torre3/Area2D"]
+position = Vector2(1575, -4417)
+rotation = 1.21561
+polygon = PackedVector2Array(-1019, 256, -1116, 13, -608.775, -500.981, -84.8203, -349.3, 1058.75, -786.923, 3092.67, -2037.67, 3985.22, -1876.19, 5056.3, -1508.77, 5376.69, -842.781, 5134.11, -79.5005, 4530.48, -91.1475, 3603.49, -585.369, 2856.7, -734.379, 710.518, 542.985, 192.262, 674.994)
+
+[node name="Torre3" type="Sprite2D" parent="Torre3"]
+z_index = 1
+position = Vector2(5143, -4521)
+scale = Vector2(1.446, 1.446)
+texture = ExtResource("3_1ep3n")
+
+[node name="Torre4" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Torre4" groups=["Musgo"]]
+position = Vector2(2476, -1857)
+
+[node name="Musgo5" type="CollisionPolygon2D" parent="Torre4/Area2D"]
+position = Vector2(-5266, -9393)
+rotation = 1.8023
+polygon = PackedVector2Array(-734.958, 486.612, -1141.21, -199.479, -622.357, -417.338, 842.492, -762.649, 3748, -1529.76, 3832.56, -1829.15, 3121.06, -2345.68, 2474.36, -2234.33, 2233.95, -2591.7, 2307.78, -2940.96, 3574.52, -3146.08, 4847.76, -1872.23, 4730.15, -1316.42, 4250.9, -581.861, 3062.68, -353.131, 34.2334, 393.647)
+
+[node name="Area2D2" type="Area2D" parent="Torre4" groups=["Musgo"]]
+position = Vector2(4427, -1810)
+
+[node name="Musgo5" type="CollisionPolygon2D" parent="Torre4/Area2D2"]
+position = Vector2(-5266, -9393)
+rotation = 1.8023
+polygon = PackedVector2Array(-322.391, 92.437, -711.71, -68.531, -954.801, -262.942, -834.583, -328.268, -692.004, -324.891, -428.307, -147.667, -166.773, -79.8652, 1668.48, -444.684, 1867.12, -569.593, 2272.13, -546.914, 2200.55, -419.08)
+
+[node name="Torre4" type="Sprite2D" parent="Torre4"]
+z_index = 1
+position = Vector2(-1670, -9076)
+scale = Vector2(1.09104, 1.09104)
+texture = ExtResource("4_qc7ek")
+
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(-342, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(2248, 890)
+scale = Vector2(81.1948, 130.417)
+shape = SubResource("WorldBoundaryShape2D_yj0iw")
+
+[node name="Respawn1" type="Marker2D" parent="."]
+position = Vector2(772, 299)
+
+[node name="CanvasMenuEscape" type="CanvasLayer" parent="."]
+
+[node name="MenuEscape" parent="CanvasMenuEscape" instance=ExtResource("9_efsn1")]
+process_mode = 3
+visible = false
+
+[node name="VSlider" parent="CanvasMenuEscape/MenuEscape/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/FullScreenYEfectos/ContainerEfectos" index="2"]
+script = ExtResource("10_caret")
+
+[node name="GuardarPartida" parent="CanvasMenuEscape/MenuEscape/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer" index="6"]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5q818")
+volume_db = -40.0
+autoplay = true
+bus = &"Music"
+
+[node name="PauseNode" type="Node" parent="."]
+process_mode = 2
+script = ExtResource("1_gt6ux")
+
+[connection signal="area_entered" from="Torre1/RigidBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre1/RigidBody2D/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Torre1/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre1/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Torre2/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre2/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Torre3/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre3/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Torre4/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre4/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Torre4/Area2D2" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Torre4/Area2D2" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+
+[editable path="Reacher"]
+[editable path="CanvasMenuEscape/MenuEscape"]

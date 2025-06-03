@@ -1,6 +1,168 @@
-[gd_scene load_steps=2 format=3 uid="uid://tyanos6ofehe"]
+[gd_scene load_steps=39 format=3 uid="uid://tyanos6ofehe"]
 
 [ext_resource type="Script" path="res://scripts/login_in_game.gd" id="1_vgiwp"]
+[ext_resource type="Texture2D" uid="uid://ddgaxns6qsqi" path="res://sprites/animations/eye_animation/sprite_0.png" id="2_rys84"]
+[ext_resource type="Texture2D" uid="uid://cmdsksaq8mena" path="res://sprites/animations/eye_animation/sprite_1.png" id="3_lq5nq"]
+[ext_resource type="Texture2D" uid="uid://bvc4rl2plkljf" path="res://sprites/animations/eye_animation/sprite_2.png" id="4_p1m5u"]
+[ext_resource type="Texture2D" uid="uid://gl3ij4v1k3hy" path="res://sprites/animations/eye_animation/sprite_3.png" id="5_pwfwu"]
+[ext_resource type="Texture2D" uid="uid://dod472loc08e1" path="res://sprites/animations/eye_animation/sprite_4.png" id="6_k7xsq"]
+[ext_resource type="Texture2D" uid="uid://cv16cb3v1d4re" path="res://sprites/animations/eye_animation/sprite_5.png" id="7_pwcca"]
+[ext_resource type="Texture2D" uid="uid://dx5x8mcfhk2ab" path="res://sprites/animations/eye_animation/sprite_6.png" id="8_u85n8"]
+[ext_resource type="Texture2D" uid="uid://clb2yw6v6b1cm" path="res://sprites/animations/fire_animation/sprite_0.png" id="9_a4dip"]
+[ext_resource type="Texture2D" uid="uid://clvl0x3buxuqr" path="res://sprites/animations/fire_animation/sprite_1.png" id="10_ek6i4"]
+[ext_resource type="Texture2D" uid="uid://d4a3l0i7jl3ps" path="res://sprites/animations/fire_animation/sprite_2.png" id="11_wvd6t"]
+[ext_resource type="Texture2D" uid="uid://e556en7chf1x" path="res://sprites/animations/left_hand_animation/sprite_00.png" id="15_r0f2v"]
+[ext_resource type="Texture2D" uid="uid://cw7palaa0d8ed" path="res://sprites/animations/left_hand_animation/sprite_01.png" id="16_oh5k8"]
+[ext_resource type="Texture2D" uid="uid://cxrv87ju0pn28" path="res://sprites/animations/left_hand_animation/sprite_02.png" id="17_wv6ga"]
+[ext_resource type="Texture2D" uid="uid://u11an5g42o7e" path="res://sprites/animations/left_hand_animation/sprite_03.png" id="18_gcv5l"]
+[ext_resource type="Texture2D" uid="uid://chj2gsv8bwwyp" path="res://sprites/animations/left_hand_animation/sprite_04.png" id="19_stpye"]
+[ext_resource type="Texture2D" uid="uid://ddwu7jr4ahdos" path="res://sprites/animations/left_hand_animation/sprite_05.png" id="20_ud6u1"]
+[ext_resource type="Texture2D" uid="uid://b8gq76husqkxn" path="res://sprites/animations/left_hand_animation/sprite_06.png" id="21_eft0a"]
+[ext_resource type="Texture2D" uid="uid://vyej63ury5a1" path="res://sprites/animations/left_hand_animation/sprite_07.png" id="22_uok5j"]
+[ext_resource type="Texture2D" uid="uid://ka6k183csqcv" path="res://sprites/animations/left_hand_animation/sprite_08.png" id="23_dhbfr"]
+[ext_resource type="Texture2D" uid="uid://bv1tcw2d1tume" path="res://sprites/animations/left_hand_animation/sprite_09.png" id="24_i1kli"]
+[ext_resource type="Texture2D" uid="uid://b4wsinfqwfbm4" path="res://sprites/animations/right_hand_animation/sprite_00.png" id="25_8ej72"]
+[ext_resource type="Texture2D" uid="uid://du7eod56l6d17" path="res://sprites/animations/right_hand_animation/sprite_01.png" id="26_g7i6d"]
+[ext_resource type="Texture2D" uid="uid://diyjj6tbyyufr" path="res://sprites/animations/right_hand_animation/sprite_02.png" id="27_hnxl5"]
+[ext_resource type="Texture2D" uid="uid://b1is01elh78qb" path="res://sprites/animations/right_hand_animation/sprite_03.png" id="28_3vbqg"]
+[ext_resource type="Texture2D" uid="uid://d04t5fllarmet" path="res://sprites/animations/right_hand_animation/sprite_04.png" id="29_xbx5o"]
+[ext_resource type="Texture2D" uid="uid://dalkm5lo24h8a" path="res://sprites/animations/right_hand_animation/sprite_05.png" id="30_ry62d"]
+[ext_resource type="Texture2D" uid="uid://tvrg4vd4bqmr" path="res://sprites/animations/right_hand_animation/sprite_06.png" id="31_jshdb"]
+[ext_resource type="Texture2D" uid="uid://dpdhxkklo35o4" path="res://sprites/animations/right_hand_animation/sprite_07.png" id="32_4qajv"]
+[ext_resource type="Texture2D" uid="uid://cehypodewt4gf" path="res://sprites/animations/right_hand_animation/sprite_08.png" id="33_phsly"]
+[ext_resource type="Texture2D" uid="uid://c5k4exju88jvl" path="res://sprites/animations/right_hand_animation/sprite_09.png" id="34_rq6y8"]
+[ext_resource type="Texture2D" uid="uid://crrxrdtfa3kla" path="res://sprites/background/login_background.png" id="35_fxho0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xp35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rys84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lq5nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p1m5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pwfwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k7xsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pwcca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u85n8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26t13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_a4dip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ek6i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wvd6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m55jn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_r0f2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_oh5k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wv6ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gcv5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_stpye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ud6u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_eft0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_uok5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dhbfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i1kli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v54sr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_8ej72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g7i6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hnxl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3vbqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xbx5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ry62d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jshdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4qajv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_phsly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_rq6y8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_rf3df"]
+offsets = PackedFloat32Array(0, 0.683938)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_osa18"]
+gradient = SubResource("Gradient_rf3df")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +172,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vgiwp")
+metadata/_edit_horizontal_guides_ = [325.0, 240.0]
+metadata/_edit_vertical_guides_ = [97.0, 1053.0]
 
 [node name="OKButton" type="Button" parent="."]
 layout_mode = 1
@@ -24,6 +188,7 @@ offset_right = 34.5
 offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 text = "Aceptar login"
 
 [node name="OKButtonCrearPass" type="Button" parent="."]
@@ -40,6 +205,7 @@ offset_right = 34.5
 offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 text = "Aceptar pass"
 
 [node name="CancelarRegistro" type="Button" parent="."]
@@ -56,6 +222,7 @@ offset_right = 113.0
 offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 text = "Cancelar
 "
 
@@ -73,6 +240,7 @@ offset_right = -38.0
 offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 text = "Si"
 
 [node name="NoCrearUsuario" type="Button" parent="."]
@@ -89,6 +257,7 @@ offset_right = 109.0
 offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 text = "No
 "
 
@@ -119,6 +288,7 @@ offset_right = 76.0
 offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 placeholder_text = "Nombre"
 max_length = 16
 expand_to_text_length = true
@@ -136,7 +306,10 @@ offset_right = 76.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../LineEditName")
+focus_neighbor_bottom = NodePath("../OKButton")
 focus_next = NodePath("../OKButton")
+mouse_filter = 2
 placeholder_text = "Contraseña"
 max_length = 16
 expand_to_text_length = true
@@ -147,6 +320,7 @@ offset_left = 44.0
 offset_top = 465.0
 offset_right = 439.0
 offset_bottom = 610.0
+mouse_filter = 2
 
 [node name="Salir" type="Button" parent="."]
 layout_mode = 1
@@ -161,6 +335,7 @@ offset_right = 537.0
 offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 text = "Salir"
 
 [node name="Label" type="Label" parent="."]
@@ -170,6 +345,50 @@ offset_top = 429.0
 offset_right = 305.0
 offset_bottom = 452.0
 text = "Usuarios activos"
+
+[node name="eye_animation" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(574, 109)
+scale = Vector2(0.348028, 0.348028)
+sprite_frames = SubResource("SpriteFrames_7xp35")
+
+[node name="fire_animation" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(579, 514)
+scale = Vector2(0.194824, 0.194824)
+sprite_frames = SubResource("SpriteFrames_26t13")
+autoplay = "default"
+frame_progress = 0.251399
+
+[node name="left_hand_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(955, 349)
+rotation = 0.523598
+scale = Vector2(0.246094, 0.246094)
+sprite_frames = SubResource("SpriteFrames_m55jn")
+autoplay = "default"
+frame_progress = 0.916546
+
+[node name="right_hand_animation" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(186.119, 350.119)
+rotation = -0.523598
+scale = Vector2(0.246094, 0.246094)
+sprite_frames = SubResource("SpriteFrames_v54sr")
+autoplay = "default"
+frame_progress = 0.993946
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(576, 267.03)
+scale = Vector2(1.16406, 1.11713)
+texture = ExtResource("35_fxho0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(587, 550)
+scale = Vector2(6.0271, 6.0271)
+range_z_min = -1020
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_osa18")
 
 [connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="OKButtonCrearPass" to="." method="_on_ok_button_crear_pass_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://idknws6ci0ry"
-path="res://.godot/imported/Level-1.png-777e16410808727876a58b6e16811131.ctex"
+uid="uid://d4a3l0i7jl3ps"
+path="res://.godot/imported/sprite_2.png-9df0d3b8bc9c4da43a25e3a7b71b77bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/skins/hand/Level-1.png"
-dest_files=["res://.godot/imported/Level-1.png-777e16410808727876a58b6e16811131.ctex"]
+source_file="res://sprites/animations/fire_animation/sprite_2.png"
+dest_files=["res://.godot/imported/sprite_2.png-9df0d3b8bc9c4da43a25e3a7b71b77bd.ctex"]
 
 [params]
 

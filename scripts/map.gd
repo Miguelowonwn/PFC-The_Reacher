@@ -63,6 +63,8 @@ var sound_effects := {
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:     
+	Global.tiempo_maximo = 500 #Cambiar en pro
+	
 	Engine.time_scale = 1
 	process_mode = Node.PROCESS_MODE_PAUSABLE 
 	_inicializar_bd()

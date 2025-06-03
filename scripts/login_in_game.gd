@@ -9,6 +9,8 @@ extends Control
 @onready var cancelar_registro: Button = $CancelarRegistro
 @onready var item_list: ItemList = $ItemList
 @onready var label: Label = $ItemList/Label 
+@onready var eye_animation: AnimatedSprite2D = $eye_animation
+@onready var timer: Timer = $Timer
 
 var database : SQLite
 var nombre_only_value
@@ -42,13 +44,24 @@ func _ready() -> void:
 	_draw_progress_chart()
 	line_edit_pass.secret = true 
 	print(dir.get_current_dir())
-	print(target_db.get_base_dir())
-	
+	print(target_db.get_base_dir()) 
+	_start_random_timer()  # Start the first timer
+
+func _start_random_timer():
+	var random_time = randf_range(5.0, 10.0)  # Random time between 5-10 sec
+	await get_tree().create_timer(random_time).timeout
+	blink_eye()  # Play animation
+	_start_random_timer()  # Restart timer for next blink
  
-func _process(delta: float) -> void: 
+func _process(delta: float) -> void:  
 	pass
 
 		
+func blink_eye(): 
+	eye_animation.play()
+	eye_animation.play_backwards() 
+	pass
+	
 func _on_ok_button_pressed() -> void:
 	if line_edit_name.text.is_empty():
 		label_warning.text = "El nombre está vacío"
@@ -83,6 +96,7 @@ func _on_ok_button_pressed() -> void:
 				 
 
 func _on_si_crear_usuario_pressed() -> void: 
+	line_edit_pass.focus_next = ok_button_crear_pass.get_path()
 	ok_button_crear_pass.visible = true
 	ok_button_crear_pass.position.x = 469
 	si_crear_usuario.visible = false
@@ -105,7 +119,6 @@ func _on_no_crear_usuario_pressed() -> void:
  
 func _on_ok_button_crear_pass_pressed() -> void:   
 	var pass_valida = _check_password(line_edit_pass.text) 
-	line_edit_pass.text = ""
 	var usuario_registrado = false
 	if usuario_registrado: 
 		label_warning.text = "Login" 
@@ -114,6 +127,7 @@ func _on_ok_button_crear_pass_pressed() -> void:
 		pass
 	elif pass_valida:
 		pass_valida = line_edit_pass.text.sha256_text()
+		line_edit_pass.text = ""
 		var datos_usuario_nuevo = {
 			"nombre": line_edit_name.text,
 			"password": pass_valida
@@ -138,11 +152,14 @@ func _on_ok_button_crear_pass_pressed() -> void:
 		ok_button_crear_pass.visible = false
 		cancelar_registro.visible = false 
 		line_edit_name.grab_focus()
+		_draw_progress_chart() 
 	else:
 		label_warning.text = "La contraseña debe tener 8 carácteres como mínimo, una letra y un número"  
-
+		line_edit_pass.text = ""
+		
  
 func _on_cancelar_registro_pressed() -> void:
+	line_edit_name.grab_focus()
 	label_warning.text = "Login" 
 	line_edit_name.text = ""
 	line_edit_pass.text = ""

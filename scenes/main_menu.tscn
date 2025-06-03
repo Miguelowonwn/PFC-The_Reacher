@@ -1266,6 +1266,7 @@ focus_neighbor_left = NodePath("../../Exit")
 focus_neighbor_top = NodePath("../Progreso")
 focus_neighbor_right = NodePath("../../Exit")
 focus_neighbor_bottom = NodePath("../Escalar")
+mouse_filter = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -1318,6 +1319,7 @@ focus_neighbor_left = NodePath("../Container_Menu/Ajustes")
 focus_neighbor_top = NodePath("../Container_Menu/Ajustes")
 focus_neighbor_right = NodePath("../Container_Menu/Ajustes")
 focus_neighbor_bottom = NodePath("../Container_Menu/Escalar")
+mouse_filter = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -1789,6 +1791,7 @@ focus_neighbor_left = NodePath("../MejoresTiempos")
 focus_neighbor_top = NodePath("../../ScoresList")
 focus_neighbor_right = NodePath("../FiltroNivel")
 focus_neighbor_bottom = NodePath("../../ScoresList")
+mouse_filter = 2
 editable = false
 selecting_enabled = false
 
@@ -1798,6 +1801,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Filtros/FiltroNivel")
 focus_neighbor_bottom = NodePath("../Filtros/FiltroNivel")
+mouse_filter = 2
 theme_override_fonts/font = ExtResource("8_h2ror")
 same_column_width = true
 script = ExtResource("10_uwdi8")
@@ -1856,6 +1860,7 @@ focus_neighbor_top = NodePath("../../../PanelContainer/VBoxContainer/PanelContai
 focus_neighbor_right = NodePath("../../ListaMedallas")
 focus_neighbor_bottom = NodePath("../../../PanelContainer/VBoxContainer/SelectorNiveles")
 focus_mode = 0
+mouse_filter = 2
 theme_override_fonts/font = ExtResource("8_h2ror")
 theme_override_font_sizes/font_size = 29
 allow_search = false
@@ -1889,6 +1894,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../../PanelContainer/VBoxContainer/PanelContainer/Scores por nivel")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../../PanelContainer/VBoxContainer/SelectorNiveles")
+mouse_filter = 2
 theme_override_fonts/font = ExtResource("8_h2ror")
 theme_override_font_sizes/font_size = 21
 allow_search = false
@@ -1948,6 +1954,7 @@ focus_neighbor_left = NodePath("../PanelContainer/Scores por nivel")
 focus_neighbor_top = NodePath("../../../StatsYItemList/ListaMedallas")
 focus_neighbor_right = NodePath("../PanelContainer/Scores por nivel")
 focus_neighbor_bottom = NodePath("../PanelContainer/Scores por nivel")
+mouse_filter = 2
 selected = 0
 item_count = 4
 popup/item_0/text = "Todos"
@@ -1961,6 +1968,7 @@ popup/item_3/id = 3
 [node name="PanelContainer" type="PanelContainer" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_slqie")
 
 [node name="Scores por nivel" type="ItemList" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
@@ -2015,7 +2023,6 @@ layout_mode = 2
 [node name="LabelGenerales" type="Label" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
 text = "Ajustes generales"
 label_settings = SubResource("LabelSettings_4mteq")
 horizontal_alignment = 1
@@ -2069,6 +2076,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../../../SliderMusica/VSlider")
+focus_neighbor_top = NodePath("../../../../Mapeo/PanelContainer/MarginContainer/VBoxContainer/Reset")
 focus_neighbor_right = NodePath("../../../SliderMusica/VSlider")
 focus_neighbor_bottom = NodePath("../../../../FullScreenYEfectos/HBoxResolucion/FullScreenCheckBox")
 mouse_filter = 2
@@ -2195,6 +2203,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("..")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("VBoxContainer")
+mouse_filter = 2
 
 [node name="VBoxContainer" parent="Ajustes/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Mapeo/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
 focus_neighbor_left = NodePath(".")
@@ -2207,6 +2216,7 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../ScrollContainer/VBoxContainer")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../../../../../FullScreenYEfectos/HBoxResolucion/FullScreenCheckBox")
+mouse_filter = 2
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_vb3en")

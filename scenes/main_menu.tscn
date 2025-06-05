@@ -1071,19 +1071,19 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2yea"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m50it"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(96, 32, 32, 32)
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fc2n7"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gtfef"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77pth"]
 atlas = ExtResource("9_q5n7y")
@@ -1091,7 +1091,7 @@ region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xplfj"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwmaq"]
 atlas = ExtResource("9_q5n7y")
@@ -1099,19 +1099,19 @@ region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu7as"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(32, 64, 32, 32)
+region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hr2ij"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(64, 64, 32, 32)
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtuuh"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(96, 64, 32, 32)
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_erdo5"]
 atlas = ExtResource("9_q5n7y")
-region = Rect2(0, 96, 32, 32)
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slqie"]
 content_margin_left = 12.0
@@ -1905,17 +1905,17 @@ same_column_width = true
 fixed_column_width = 180
 icon_mode = 0
 icon_scale = 3.0
-item_0/text = "N1 - Sin morir"
+item_0/text = "N1 - Runner"
 item_0/icon = SubResource("AtlasTexture_lqdej")
-item_1/text = "N2 - Sin morir"
+item_1/text = "N2 - Runner"
 item_1/icon = SubResource("AtlasTexture_e2yea")
-item_2/text = "N3 - Sin morir"
+item_2/text = "N3 - Runner"
 item_2/icon = SubResource("AtlasTexture_m50it")
-item_3/text = "N1 - Runner"
+item_3/text = "N1 - Sin morir"
 item_3/icon = SubResource("AtlasTexture_fc2n7")
-item_4/text = "N2 - Runner"
+item_4/text = "N2 - Sin morir"
 item_4/icon = SubResource("AtlasTexture_gtfef")
-item_5/text = "N3 - Runner"
+item_5/text = "N3 - Sin morir"
 item_5/icon = SubResource("AtlasTexture_77pth")
 item_6/text = "N1 - Coins"
 item_6/icon = SubResource("AtlasTexture_xplfj")

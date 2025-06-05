@@ -106,6 +106,7 @@ var database := SQLite.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:   
+	Engine.time_scale = 1
 	await get_tree().process_frame 
 	escalar.grab_focus()
 	_inicializar_bd()
@@ -339,7 +340,7 @@ func comprobar_si_line_edit_tiene_focus():
 func comprobar_partida_terminada():
 	if Global.meta_conseguida:
 		
-		pass			
+		pass
 		 
 # Manos Pressed ---------------------------------
 func _on_mano_skin_1_pressed() -> void:
@@ -527,25 +528,27 @@ func _on_ajustes_pressed() -> void:
 	
 # Niveles pressed  
 func _on_nivel_1_pressed() -> void:
+	Global.nivel_seleccionado = 1
 	nivel_1.texture_normal = preload("res://sprites/level_icons/Level-1-Selected.png")
 	boton_mano_rojo.grab_focus()    
-	Global.tiempo_maximo = 300
-	print("seleccionado nivel 1")
-	print(Global.tiempo_maximo)
+	Global.tiempo_maximo = 500  
+	Global.tiempo_actual = 500  
 	effects.play()
 
 func _on_nivel_2_pressed() -> void:
+	Global.nivel_seleccionado = 2
 	nivel_2.texture_normal = preload("res://sprites/level_icons/Level-2-Selected.png")
 	boton_mano_rojo.grab_focus()   
-	Global.tiempo_maximo = 200
-	print("seleccionado nivel 2")
+	Global.tiempo_maximo = 400
+	Global.tiempo_actual = 400    
 	effects.play()
 	
 func _on_nivel_3_pressed() -> void:
+	Global.nivel_seleccionado = 3
 	nivel_3.texture_normal = preload("res://sprites/level_icons/Level-3-Selected.png")
 	boton_mano_rojo.grab_focus()   
-	Global.tiempo_maximo = 5
-	print("seleccionado nivel 3")
+	Global.tiempo_maximo = 200
+	Global.tiempo_actual = 200  
 	effects.play()
 	
 func resetear_elección_nivel_skins(): 

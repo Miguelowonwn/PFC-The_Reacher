@@ -13,7 +13,8 @@ var timer_actualizacion: Timer
  
 #Esquina de pantalla con Stats
 @onready var label_time: Label = $CanvasLayer/TiempoRestante/VBoxContainer/Tiempo/LabelTime
-@onready var time_left: Label = $CanvasLayer/TiempoRestante/VBoxContainer/Tiempo/TimeLeft
+@onready var time_left: Label = $CanvasLayer/TiempoRestante/VBoxContainer/Tiempo/TimeLeft 
+
 @onready var label_coins: Label = $CanvasLayer/TiempoRestante/VBoxContainer/Monedas/LabelCoins
 @onready var coins: Label = $CanvasLayer/TiempoRestante/VBoxContainer/Monedas/Coins
 @onready var animaciones: AnimationPlayer = $Animaciones
@@ -47,12 +48,9 @@ var right_esta_agarrando: bool = false
 			
 @onready var music: AudioStreamPlayer = $Music    
 @onready var effects: AudioStreamPlayer = $Effects
-
-var sound_effects := {
-	"coin": preload("res://resources/musicNsounds/coin-pickup.mp3"),
-	"select": preload("res://resources/musicNsounds/select_sound.mp3")
-	#"damage": preload("res://resources/musicNsounds/damage.ogg")
-}
+ 
+@onready var meta: Area2D = $Meta
+@onready var collision_shape_2d: CollisionShape2D = $Meta/CollisionShape2D
 
 @onready var eyeAnimation: AnimatedSprite2D = $Reacher/Eye/Animacion
 @onready var menu_escape: Control = $CanvasMenuEscape/MenuEscape
@@ -62,9 +60,8 @@ var sound_effects := {
 
  
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:     
-	Global.tiempo_maximo = 500 #Cambiar en pro
-	
+func _ready() -> void:       
+	Global.coin_count = 0
 	Engine.time_scale = 1
 	process_mode = Node.PROCESS_MODE_PAUSABLE 
 	_inicializar_bd()
@@ -80,22 +77,24 @@ func _ready() -> void:
 
 func iniciar_conteo_tiempo():
 	# Reinicia el valor si es necesario 
-	time_left.text = str(Global.tiempo_maximo)
+	time_left.text = str(Global.tiempo_actual)
 	timer_actualizacion.start()
 
 func _actualizar_tiempo():
-	if Global.tiempo_maximo > 0:
-		Global.tiempo_maximo -= 1
-		time_left.text = str(Global.tiempo_maximo)
-	else:
-		timer_actualizacion.stop()
-		# Aquí puedes añadir lo que ocurre cuando el tiempo llega a 0
-		game_over() 
+	if not Global.mostrar_scores:
+		if Global.tiempo_actual > 0:
+			Global.tiempo_actual -= 1 
+			time_left.text = str(Global.tiempo_actual)
+		else:
+			timer_actualizacion.stop()
+			# Aquí puedes añadir lo que ocurre cuando el tiempo llega a 0
+			game_over() 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:  
 	comprobar_si_moneda_obtenida()
 	cada_segundo_actualizar_tiempo_restando()
+	comprobar_meta_conseguida()
 	pass
 	 
 func _on_area_2d_area_entered(area: Area2D) -> void:  
@@ -246,9 +245,16 @@ func comprobar_si_moneda_obtenida():
 		coins.text = str(num_coins)
 		
 func cada_segundo_actualizar_tiempo_restando():
-	time_left.text = str(Global.tiempo_maximo) 
+	time_left.text = str(Global.tiempo_actual)  
 	pass 
 
+func comprobar_meta_conseguida():
+	if Global.meta_conseguida: 
+		collision_shape_2d.disabled = true
+		animaciones.play("meta_conseguida")
+		Global.meta_conseguida = false
+		Global.mostrar_scores = true
+		Engine.time_scale = 0.5 
 		
 ############################ BASE DE DATOS
 func _inicializar_bd():

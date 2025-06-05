@@ -14,6 +14,11 @@ var progreso_total: int = 0
 var total_monedas: int = 0
 var tiempo_total_juego: int = 0
 
+const MAX_SKINS = 18  # Total de skins posibles (excluyendo las 2 por defecto)
+const MAX_MEDALS = 12  # Total de medallas posibles
+const SKINS_WEIGHT = 0.6  # 60% del progreso total
+const MEDALS_WEIGHT = 0.4  # 40% del progreso total
+
 # Equivalencias de skins
 var skin_index = {
 	"0": "Roja",
@@ -71,7 +76,7 @@ func _cargar_estadisticas() -> void:
 		skins_mano_usadas.append(puntuacion_str.substr(3, 1))  # 4º dígito (índice skin mano)
 		skins_ojo_usadas.append(puntuacion_str.substr(4, 1))   # 5º dígito (índice skin ojo)
 		  
-		var muertes = 9 - int(puntuacion_str.substr(5, 1))     # 6º dígito (9 - X muertes)
+		var muertes =  1 # 6º dígito (9 - X muertes)
 		num_muertes.append(muertes)
 		
 		var monedas = int(puntuacion_str.substr(6, 2))         # Últimos 2 dígitos
@@ -87,10 +92,37 @@ func _cargar_estadisticas() -> void:
 	# Calcular total de muertes
 	for muerte in num_muertes:
 		total_muertes += muerte
+ 
+	 # Calcular progreso total basado en skins y medallas
+	progreso_total = _calcular_progreso_total() 
 
-	# Calcular progreso total (ejemplo basado en monedas)
-	progreso_total = min(int(float(total_monedas) / 100 * 100), 100)  # Ejemplo: 1 moneda = 1%
 
+func _calcular_progreso_total() -> int:
+	# Obtener skins desbloqueadas
+	var skins_desbloqueadas = database.select_rows(
+		"Skins", 
+		"usuario_id = '%s' AND desbloqueada = 'true'" % Global.id_usuario, 
+		["id"]
+	).size()
+	
+	# Restar las 2 skins por defecto si es necesario
+	skins_desbloqueadas = max(0, skins_desbloqueadas - 2)
+	
+	# Obtener medallas conseguidas
+	var medallas_conseguidas = database.select_rows(
+		"Medallas", 
+		"usuario_id = '%s'" % Global.id_usuario, 
+		["id"]
+	).size()
+	
+	# Calcular porcentajes individuales
+	var porcentaje_skins = (float(skins_desbloqueadas) / MAX_SKINS) * 100 * SKINS_WEIGHT
+	var porcentaje_medallas = (float(medallas_conseguidas) / MAX_MEDALS) * 100 * MEDALS_WEIGHT
+	
+	# Progreso total combinado
+	var progreso = porcentaje_skins + porcentaje_medallas
+	return min(int(progreso), 100)  # Asegurar que no supere 100%
+	
 func _calcular_mas_usado(lista: Array) -> String:
 	var contador = {}
 	var max_item = "0"
@@ -127,13 +159,7 @@ func _calcular_nivel_mas_jugado() -> String:
 
 func escribir_datos_tabla():
 	clear()
-
-	# Convertir tiempo total a formato legible
-	var horas = tiempo_total_juego / 3600
-	var minutos = (tiempo_total_juego % 3600) / 60
-	var segundos = tiempo_total_juego % 60
-	var tiempo_formateado = "%02d:%02d:%02d" % [horas, minutos, segundos]
-
+  
 	# Datos en formato [título, valor]
 	var datos = [
 		["Skin de mano más usada:", skin_index.get(skin_mano_mas_usada, "N/A")],

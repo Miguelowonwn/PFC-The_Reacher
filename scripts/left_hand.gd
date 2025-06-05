@@ -44,14 +44,14 @@ var left_hand_sprite_sheet = preload("res://sprites/skins/hand/left_hand_skins.p
   
 var skin_index = {
 	"Roja": 0,
-	"Amarilla": 1,
+	"Amarillo": 1,
 	"Azul": 2,
 	"Gris": 3,
-	"Negra": 4,
+	"Negro": 4,
 	"Rosa": 5,
 	"Naranja": 6,
 	"Verde": 7,
-	"Blanca": 8,
+	"Blanco": 8,
 	"Cian": 9
 }
 

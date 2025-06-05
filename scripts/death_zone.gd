@@ -10,9 +10,10 @@ func _on_body_entered(body: Node2D) -> void:
 		checkpoint_manager.respawn_reacher()  
 
 func _play_death_sequence():
-	# Aquí puedes añadir efectos de muerte
-	# Ejemplo: animación, sonido, partículas
-	get_tree().paused = true
-	await get_tree().create_timer(0.5).timeout
-	get_tree().paused = false
+	if not Global.mostrar_scores:
+		# Aquí puedes añadir efectos de muerte
+		# Ejemplo: animación, sonido, partículas
+		get_tree().paused = true
+		await get_tree().create_timer(0.5).timeout
+		get_tree().paused = false
   

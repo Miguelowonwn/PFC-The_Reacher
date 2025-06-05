@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dcr5kk73drwqm"]
+[gd_scene load_steps=30 format=3 uid="uid://dcr5kk73drwqm"]
 
 [ext_resource type="Script" path="res://scripts/pause_node.gd" id="1_gt6ux"]
 [ext_resource type="Texture2D" uid="uid://dlbrng48nvup1" path="res://resources/Mapa niveles/torre 1.png" id="1_h7y2l"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/checkpoint_manager.gd" id="16_6my1n"]
 [ext_resource type="PackedScene" uid="uid://bua44ga28eah4" path="res://scenes/checkpoint.tscn" id="17_sgtva"]
 [ext_resource type="Script" path="res://sprites/meta.gd" id="19_3nrma"]
+[ext_resource type="PackedScene" uid="uid://oe474q2vtt4j" path="res://scenes/scores_meta_conseguida.tscn" id="20_773pl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdmh2"]
 size = Vector2(20.5954, 3.32811)
@@ -55,6 +56,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1152, -88)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Control:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_egnmq"]
 resource_name = "game_over"
@@ -83,10 +108,38 @@ tracks/1/keys = {
 "values": [2.61799, -0.261799, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_gw5dt"]
+resource_name = "meta_conseguida"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, -88), Vector2(576, 214)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1pv1e"]
 _data = {
 "RESET": SubResource("Animation_ripls"),
-"game_over": SubResource("Animation_egnmq")
+"game_over": SubResource("Animation_egnmq"),
+"meta_conseguida": SubResource("Animation_gw5dt")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ttfp2"]
@@ -350,6 +403,33 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_470jm")
 position = Vector2(-29, 16)
 texture = ExtResource("14_3gh11")
 
+[node name="Control" parent="CanvasLayer" instance=ExtResource("20_773pl")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -1728.0
+offset_top = -88.0
+offset_right = -1728.0
+offset_bottom = -88.0
+grow_vertical = 1
+scale = Vector2(0.661656, 0.661656)
+size_flags_vertical = 4
+
+[node name="DesbloqueosList" parent="CanvasLayer/Control" index="9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = 151.0
+offset_right = 427.0
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Animaciones" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_1pv1e")
@@ -362,10 +442,11 @@ script = ExtResource("16_6my1n")
 position = Vector2(772, 274)
 
 [node name="Meta" type="Area2D" parent="."]
+position = Vector2(1250, -323)
 script = ExtResource("19_3nrma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Meta"]
-position = Vector2(976, -44)
+position = Vector2(-1.52588e-05, 0)
 scale = Vector2(0.165775, 0.165775)
 shape = SubResource("CircleShape2D_ttfp2")
 
@@ -387,3 +468,4 @@ shape = SubResource("CircleShape2D_ttfp2")
 [editable path="Reacher"]
 [editable path="CanvasMenuEscape/MenuEscape"]
 [editable path="CanvasMenuEscape/MenuEscape/PanelContainerBg/PanelContainer/MarginContainer/VBoxContainer/Mapeo"]
+[editable path="CanvasLayer/Control"]

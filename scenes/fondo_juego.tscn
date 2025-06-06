@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://tt8vxjh5mn8v"]
+
+[ext_resource type="Texture2D" uid="uid://c4w4oapygyquk" path="res://sprites/background/fondo-nubes.png" id="1_ev2pl"]
+[ext_resource type="Texture2D" uid="uid://c2wtutgk42nwu" path="res://sprites/background/fondo-montanas.png" id="2_70nkw"]
+[ext_resource type="Texture2D" uid="uid://cpp4cubojqigw" path="res://sprites/background/fondo-suelo.png" id="3_5lot4"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.65574, 2.6409)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="Nubes" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Nubes"]
+offset_right = 192.0
+offset_bottom = 108.0
+scale = Vector2(1000, 1000)
+texture = ExtResource("1_ev2pl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Montanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Montanas"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1000, 1000)
+texture = ExtResource("2_70nkw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Suelo" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Suelo"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1000, 1000)
+texture = ExtResource("3_5lot4")
+metadata/_edit_use_anchors_ = true

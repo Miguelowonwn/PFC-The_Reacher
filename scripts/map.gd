@@ -87,7 +87,6 @@ func _actualizar_tiempo():
 			time_left.text = str(Global.tiempo_actual)
 		else:
 			timer_actualizacion.stop()
-			# Aquí puedes añadir lo que ocurre cuando el tiempo llega a 0
 			game_over() 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -139,7 +138,6 @@ func toggle_pause():
 		# Reanudar la música
 		music.stream_paused = false
 
-	# Manejar ajustes si estaban activos
 	if musica_slider.has_focus() or efectos_slider.has_focus(): 
 		_guardar_ajustes_en_bd()
 		await get_tree().create_timer(0.1).timeout
@@ -162,6 +160,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_guardar_ajustes_en_bd()
 			await get_tree().create_timer(0.1).timeout
 			full_screen_check_box.grab_focus()
+			
 ############################ AJUSTES  
 func _volver_atras():
 	if musica_slider.has_focus():

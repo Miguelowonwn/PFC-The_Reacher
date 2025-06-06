@@ -66,11 +66,9 @@ func save_checkpoint():
 
 func respawn_reacher():
 	# 1. Desactivar física temporalmente
-	_set_physics_process(false)
-	
+	_set_physics_process(false) 
 	# 2. Resetear parámetros físicos
-	_reset_physics_parameters()
-	
+	_reset_physics_parameters() 
 	# 3. Restaurar posiciones
 	left_hand.global_position = ultima_posicion_izquierda
 	right_hand.global_position = ultima_posicion_derecha

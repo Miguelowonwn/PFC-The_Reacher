@@ -7,7 +7,7 @@ signal respawned()
 @onready var left_hand: CharacterBody2D = $"../Left_hand"
 @onready var right_hand: CharacterBody2D = $"../Right_hand"
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
+  
 # Sistema de skins del ojo
 var eye_sprite_sheet = preload("res://sprites/skins/eye/eye_skins_animation.png")
 var current_eye_skin_index = 0
@@ -25,7 +25,7 @@ var eye_skin_index = {
 	"Cian": 9
 }
 
-func _ready() -> void:
+func _ready() -> void: 
 	inicializar_eye_skin()
 	# Configuración inicial de las joints
 	lefthand_joint.stiffness = 80.0
@@ -45,19 +45,16 @@ func update_eye_texture():
 	# Asegurarnos que el sprite no está espejado
 	sprite_2d.flip_h = false
 	sprite_2d.flip_v = false
-	
-	# Tamaño del sprite sheet (ajusta según tu archivo)
+	 
 	var sheet_width = eye_sprite_sheet.get_width() / 3
 	var sheet_height = eye_sprite_sheet.get_height()
-	
-	# Asumiendo 1 columna (solo estado abierto) y 10 filas (una por skin)
+	 
 	var sprite_height = sheet_height / 10  # 10 skins
-	
-	# Configurar AtlasTexture
+	 
 	var atlas = AtlasTexture.new()
 	atlas.atlas = eye_sprite_sheet
 	atlas.region = Rect2(
-		0,  # Columna 0
+		0,   
 		current_eye_skin_index * sprite_height,  # Fila según skin
 		sheet_width,  # Ancho completo
 		sprite_height

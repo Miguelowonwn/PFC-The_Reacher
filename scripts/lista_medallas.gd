@@ -25,7 +25,7 @@ func update_icons_appearance():
 			set_item_disabled(i, false)
 
 func initialize_items():
-	# Asegurar que tenemos exactamente 12 items en el orden correcto
+	
 	if get_item_count() != 12:
 		clear()
 		# Nivel 1
@@ -57,27 +57,27 @@ func mark_item_as_unlocked(index: int):
 func cargar_medallas_conseguidas():
 	resultados = database.select_rows("Medallas", "usuario_id = '%s'" % Global.id_usuario, ["tipo_desbloqueo"])
 	
-	# Mapeo CORREGIDO de IDs a índices
+	
 	var medal_index_map = {
 		# Perfección (N/D)
-		21: 0,  # Nivel 1
-		22: 3,  # Nivel 2
-		23: 6,  # Nivel 3
+		21: 0,  
+		22: 3,  
+		23: 6,  
 		
 		# Velocista (Runner)
-		24: 1,  # Nivel 1
-		25: 4,  # Nivel 2 (¡ESTE ES EL QUE FALLABA!)
-		26: 7,  # Nivel 3
+		24: 1,  
+		25: 4,  
+		26: 7,  
 		
 		# Coleccionista (Coins)
-		27: 2,  # Nivel 1
-		28: 5,  # Nivel 2
-		29: 8,  # Nivel 3
+		27: 2,  
+		28: 5, 
+		29: 8,  
 		
 		# Especiales
-		30: 9,   # Shiny
-		31: 10,  # 100 Monedas
-		32: 11   # Platino
+		30: 9,  
+		31: 10,  
+		32: 11   
 	}
 	
 	for medalla in resultados:

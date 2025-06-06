@@ -19,6 +19,9 @@ var skins_usuario
 @onready var desbloqueos_list: ItemList = $DesbloqueosList
 @onready var button: Button = $Button
 
+var minutos
+var segundos 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_inicializar_bd() 
@@ -76,7 +79,13 @@ func montar_scores():
 	# Comprobar y mostrar desbloqueos
 	comprobar_desbloqueos(puntuacion)
 	score_resultado.text = str(puntuacion)
-	tiempo_resultado.text = str(segundos_jugados)
+	if segundos_jugados > 59:
+		minutos = segundos_jugados / 60
+		segundos = minutos.right(1)
+		tiempo_resultado.text = str(minutos) + "''" + str(segundos) + "'"
+	else:
+		tiempo_resultado.text = str(segundos_jugados) + "'"
+ 
 	monedas_resultado.text = str(monedas_conseguidas)
 	 
 	# Preparar datos para insertar

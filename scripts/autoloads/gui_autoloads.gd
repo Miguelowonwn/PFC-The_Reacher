@@ -21,13 +21,7 @@ func _ready() -> void:
 		var new_scene = load(i).instantiate()
 		add_child(new_scene)
 		new_scene.hide()
-		#
-#func _input(_event):
-	#if Input.is_action_just_pressed("escape_menu"):
-		#var settings_menu = get_node("MenuEscape")
-		#settings_menu.visible = !settings_menu.visible
-		#if settings_menu.visible: 
-			#settings_menu.update_button_values()
+	
  
 
 func center_window():

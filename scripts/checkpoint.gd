@@ -18,4 +18,3 @@ func _on_body_entered(body: Node2D) -> void:
 		checkpoint_manager.ultima_velocidad_ojo = checkpoint_manager.eye.linear_velocity
 		checkpoint_manager.ultima_rotacion_ojo = checkpoint_manager.eye.rotation
 		
-		print("Checkpoint actualizado!")

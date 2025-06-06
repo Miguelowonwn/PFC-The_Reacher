@@ -16,9 +16,9 @@ var total_monedas_por_nivel = {
 }
 
 var tiempo_maximo_por_nivel = {
-	1: 500,  # 5 minutos (ajusta según tu juego)
-	2: 400,  # 7 minutos
-	3: 200   # 10 minutos
+	1: 500,  
+	2: 400,  
+	3: 200   
 }
 
 #Partida 

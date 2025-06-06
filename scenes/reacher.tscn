@@ -23,6 +23,7 @@ metadata/_edit_horizontal_guides_ = [-114.0]
 
 [node name="Left_hand" type="CharacterBody2D" parent="." groups=["Reacher"]]
 z_index = 1
+position = Vector2(0, -187)
 scale = Vector2(5, 5)
 script = ExtResource("1_ua35f")
 
@@ -42,6 +43,7 @@ shape = SubResource("CircleShape2D_4bp7h")
 
 [node name="Right_hand" type="CharacterBody2D" parent="." groups=["Reacher"]]
 z_index = 1
+position = Vector2(0, -187)
 scale = Vector2(5, 5)
 script = ExtResource("2_h3vuj")
 
@@ -80,29 +82,27 @@ scale = Vector2(9.74285, 8.02316)
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Eye"]
-position = Vector2(0, -114)
-scale = Vector2(5.23909, 5.23909)
+position = Vector2(-7.62939e-06, -116)
+scale = Vector2(2.80704, 2.80704)
 texture = SubResource("AtlasTexture_vqobu")
 
 [node name="LefthandJoint" type="DampedSpringJoint2D" parent="."]
-position = Vector2(-214, -152)
-rotation = -0.864908
+position = Vector2(-205, -326)
+rotation = -0.523598
 node_a = NodePath("../Left_hand")
 node_b = NodePath("../Eye")
 disable_collision = false
-length = 20.0
-rest_length = 20.0
-damping = 16.0
+length = 370.0
+rest_length = 250.0
 
 [node name="RighthandJoint" type="DampedSpringJoint2D" parent="."]
-position = Vector2(226, -139)
-rotation = 0.875454
+position = Vector2(211, -326)
+rotation = 0.523598
 node_a = NodePath("../Eye")
 node_b = NodePath("../Right_hand")
 disable_collision = false
-length = 20.0
-rest_length = 20.0
-damping = 16.0
+length = 395.0
+rest_length = 250.0
 
 [node name="Effects" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_avfjw")

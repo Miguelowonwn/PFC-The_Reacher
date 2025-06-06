@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://oe474q2vtt4j"]
+[gd_scene load_steps=8 format=3 uid="uid://oe474q2vtt4j"]
 
 [ext_resource type="Script" path="res://scripts/montar_scores.gd" id="1_rwq1y"]
 [ext_resource type="FontFile" uid="uid://db8tvw3pd7d1k" path="res://resources/FiraMono-Regular.ttf" id="2_gm5h0"]
@@ -16,6 +16,23 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_gis7o"]
+font_size = 33
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_btg1i"]
+font_size = 47
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sm414"]
+font_size = 26
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -67,16 +84,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -452.0
-offset_top = -48.0
-offset_right = -352.0
-offset_bottom = -8.0
+offset_left = -460.0
+offset_top = -32.0
+offset_right = -345.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 29
 text = "SCORE:"
+label_settings = SubResource("LabelSettings_gis7o")
 
 [node name="ScoreResultado" type="Label" parent="."]
 layout_mode = 1
@@ -85,10 +103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.5
-offset_top = -51.5
-offset_right = 37.5
-offset_bottom = 12.5
+offset_left = -57.0
+offset_top = -41.0
+offset_right = 28.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -96,6 +114,7 @@ theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 52
 text = "123
 "
+label_settings = SubResource("LabelSettings_btg1i")
 horizontal_alignment = 2
 
 [node name="Tiempo" type="Label" parent="."]
@@ -115,6 +134,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 29
 text = "TIEMPO:"
+label_settings = SubResource("LabelSettings_gis7o")
 
 [node name="TiempoResultado" type="Label" parent="."]
 layout_mode = 1
@@ -123,9 +143,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.5
+offset_left = -119.0
 offset_top = -105.0
-offset_right = 61.5
+offset_right = 78.0
 offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -133,6 +153,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 52
 text = "1' 56''"
+label_settings = SubResource("LabelSettings_btg1i")
 horizontal_alignment = 1
 
 [node name="Monedas" type="Label" parent="."]
@@ -142,16 +163,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -452.0
-offset_top = 8.0
-offset_right = -299.0
-offset_bottom = 48.0
+offset_left = -460.0
+offset_top = 39.0
+offset_right = -306.0
+offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 29
 text = "MONEDAS:"
+label_settings = SubResource("LabelSettings_gis7o")
 
 [node name="MonedasResultado" type="Label" parent="."]
 layout_mode = 1
@@ -160,16 +182,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = 4.5
-offset_right = 31.5
-offset_bottom = 68.5
+offset_left = -44.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 52
-text = "23 "
+text = "23"
+label_settings = SubResource("LabelSettings_btg1i")
 
 [node name="Desbloqueos" type="Label" parent="."]
 layout_mode = 1
@@ -188,6 +211,7 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_gm5h0")
 theme_override_font_sizes/font_size = 28
 text = "DESBLOQUEOS CONSEGUIDOS "
+label_settings = SubResource("LabelSettings_sm414")
 
 [node name="DesbloqueosList" type="ItemList" parent="."]
 layout_mode = 0

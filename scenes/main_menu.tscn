@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://dxp5ylkvydj17"]
+[gd_scene load_steps=103 format=3 uid="uid://dxp5ylkvydj17"]
 
 [ext_resource type="Texture2D" uid="uid://i2bl7bpp5xqr" path="res://sprites/background/Cartoon_Forest_BG_01.png" id="1_1apih"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vp5u2"]
@@ -1047,6 +1047,12 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 5
 
+[sub_resource type="LabelSettings" id="LabelSettings_4mteq"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
 [sub_resource type="Theme" id="Theme_hggqt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrn0f"]
@@ -1064,6 +1070,18 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
 expand_margin_bottom = 15.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_p003m"]
+font_size = 23
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yssil"]
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqdej"]
 atlas = ExtResource("9_q5n7y")
@@ -1113,6 +1131,12 @@ region = Rect2(32, 96, 32, 32)
 atlas = ExtResource("9_q5n7y")
 region = Rect2(64, 96, 32, 32)
 
+[sub_resource type="LabelSettings" id="LabelSettings_20a67"]
+font_size = 29
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slqie"]
 content_margin_left = 12.0
 content_margin_top = 12.0
@@ -1142,8 +1166,8 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="LabelSettings" id="LabelSettings_4mteq"]
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_cqsxo"]
+font_size = 28
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0.284768, 0.210223, 0.0437973, 0)
@@ -1153,6 +1177,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vp5u2")
@@ -1677,6 +1703,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ndvgp")
 text = "Elige tu skin!"
+label_settings = SubResource("LabelSettings_4mteq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1697,6 +1724,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ndvgp")
 text = "Elige el nivel! "
+label_settings = SubResource("LabelSettings_4mteq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1741,6 +1769,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Filtrar por nivel"
+label_settings = SubResource("LabelSettings_p003m")
 
 [node name="FiltroNivel" type="OptionButton" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
 layout_mode = 2
@@ -1767,6 +1796,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Filtrar por mejor tiempo"
+label_settings = SubResource("LabelSettings_p003m")
 
 [node name="MejoresTiempos" type="CheckBox" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
 layout_mode = 2
@@ -1783,6 +1813,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Filtrar por usuario"
+label_settings = SubResource("LabelSettings_p003m")
 
 [node name="FiltrarUsuario" type="LineEdit" parent="TablaScores/PanelContainer/VBoxContainer/Filtros"]
 layout_mode = 2
@@ -1843,8 +1874,9 @@ layout_mode = 2
 [node name="Estadisticas" type="Label" parent="Progreso/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 50
 text = "Estadísticas"
+label_settings = SubResource("LabelSettings_yssil")
 horizontal_alignment = 1
 
 [node name="StatsYItemList" type="HBoxContainer" parent="Progreso/PanelContainer/VBoxContainer"]
@@ -1945,6 +1977,7 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 31
 text = "Scores"
+label_settings = SubResource("LabelSettings_20a67")
 horizontal_alignment = 1
 
 [node name="SelectorNiveles" type="OptionButton" parent="Progreso/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer"]
@@ -2024,7 +2057,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Ajustes generales"
-label_settings = SubResource("LabelSettings_4mteq")
+label_settings = SubResource("LabelSettings_cqsxo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
